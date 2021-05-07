@@ -1,0 +1,15 @@
+{
+  "extends": "@mll-lab/tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "dist",
+    "lib": ["dom", "ES5", "ES2015"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "types": ["node", "jest"],
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
