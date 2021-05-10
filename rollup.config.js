@@ -1,3 +1,4 @@
+import pkg from './package.json'
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -8,10 +9,15 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      dir: 'dist',
-      format: 'esm',
+      file: pkg.main,
+      format: 'cjs',
       sourcemap: true,
     },
+    {
+      file: pkg.module,
+      format: 'cjs',
+      sourcemap: true
+    }
   ],
 
   // this resolves to window in the browser, thus enabling caching in the antd code below
