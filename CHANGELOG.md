@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mll-lab/js-utils/compare/v1.1.0...v1.2.0) (2021-05-10)
+
+
+### Features
+
+* Publish commonjs build ([975d02b](https://github.com/mll-lab/js-utils/commit/975d02b4f17f57486ccb90bfeaefe6399f924bdf))
+
 # [1.1.0](https://github.com/mll-lab/js-utils/compare/v1.0.0...v1.1.0) (2021-05-07)
 
 
