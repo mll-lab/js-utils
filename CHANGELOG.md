@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/mll-lab/js-utils/compare/v1.3.1...v1.3.2) (2021-07-08)
+
+
+### Bug Fixes
+
+* Actually export array and date utils ([3ec9e34](https://github.com/mll-lab/js-utils/commit/3ec9e34bc205f5e9549b02943d63a289650e217f))
+
 ## [1.3.1](https://github.com/mll-lab/js-utils/compare/v1.3.0...v1.3.1) (2021-07-08)
 
 
