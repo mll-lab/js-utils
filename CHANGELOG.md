@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/mll-lab/js-utils/compare/v1.3.0...v1.3.1) (2021-07-08)
+
+
+### Bug Fixes
+
+* Include types within build output ([46421ed](https://github.com/mll-lab/js-utils/commit/46421ed474bcb30e4ef913511a915b1cba1339fa))
+
 # [1.3.0](https://github.com/mll-lab/js-utils/compare/v1.2.0...v1.3.0) (2021-07-08)
 
 
