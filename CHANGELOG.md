@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mll-lab/js-utils/compare/v1.2.0...v1.3.0) (2021-07-08)
+
+
+### Features
+
+* Add array and date utils ([28d06bf](https://github.com/mll-lab/js-utils/commit/28d06bf0cf504774108fec43196dbdd8f83ff987))
+
 # [1.2.0](https://github.com/mll-lab/js-utils/compare/v1.1.0...v1.2.0) (2021-05-10)
 
 
