@@ -11,9 +11,9 @@ Shared JavaScript utilities of MLL
 
 ## Usage
 
-Just import the functions you need and call them:
+Just import the functions you need and call them, for example:
 
-```typescript jsx
+```ts
 import { isLabId } from '@mll-lab/js-utils';
 
 isLabId('obviously not');
