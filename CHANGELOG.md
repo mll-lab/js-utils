@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/mll-lab/js-utils/compare/v1.3.2...v1.3.3) (2021-08-18)
+
+
+### Bug Fixes
+
+* ensure containSameValues() does not mutate its inputs ([01b3d0d](https://github.com/mll-lab/js-utils/commit/01b3d0de2cf716a15114a9eac3f39a235855242b))
+
 ## [1.3.2](https://github.com/mll-lab/js-utils/compare/v1.3.1...v1.3.2) (2021-07-08)
 
 
