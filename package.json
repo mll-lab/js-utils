@@ -25,7 +25,10 @@
     "js",
     "utils"
   ],
-  "author": "Benedikt Franke <benedikt@franke.tech>",
+  "author": {
+    "name": "Benedikt Franke",
+    "email": "benedikt@franke.tech"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mll-lab/js-utils/issues"
