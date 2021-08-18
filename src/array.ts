@@ -1,4 +1,4 @@
-import { isEqual } from 'lodash';
+import { isEqual, sortBy } from 'lodash';
 
 /**
  * Return a new array that does not contain the item at the specified index.
@@ -17,7 +17,7 @@ export function containSameValues(
   a: Array<unknown>,
   b: Array<unknown>,
 ): boolean {
-  return isEqual(a.sort(), b.sort());
+  return isEqual(sortBy(a), sortBy(b));
 }
 
 /**
