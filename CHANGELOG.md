@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/mll-lab/js-utils/compare/v1.3.3...v1.4.0) (2021-09-02)
+
+
+### Features
+
+* add round number to decimals ([0e3fadf](https://github.com/mll-lab/js-utils/commit/0e3fadfe30f3f0479786834ba2267dc2bd67bb81))
+
 ## [1.3.3](https://github.com/mll-lab/js-utils/compare/v1.3.2...v1.3.3) (2021-08-18)
 
 
