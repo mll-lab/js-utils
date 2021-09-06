@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/mll-lab/js-utils/compare/v1.4.0...v1.4.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* add export of round function ([e8a4739](https://github.com/mll-lab/js-utils/commit/e8a47398616155f76c598e9234f2a079157d24c4))
+
 # [1.4.0](https://github.com/mll-lab/js-utils/compare/v1.3.3...v1.4.0) (2021-09-02)
 
 
