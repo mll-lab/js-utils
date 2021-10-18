@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/mll-lab/js-utils/compare/v1.4.1...v2.0.0) (2021-10-18)
+
+
+### Features
+
+* add parse and format functions for all date formats ([d41dbc8](https://github.com/mll-lab/js-utils/commit/d41dbc8ca4a305ae0d8e43664e33632f3f8c9edc))
+
+
+### BREAKING CHANGES
+
+* remove MINIMAL_VALID_DATE and ISO_GERMAN_DATE_FORMAT
+
 ## [1.4.1](https://github.com/mll-lab/js-utils/compare/v1.4.0...v1.4.1) (2021-09-06)
 
 
