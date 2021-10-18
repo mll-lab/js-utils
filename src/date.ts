@@ -1,8 +1,18 @@
-import { differenceInCalendarDays, format, isValid, parse } from 'date-fns';
+import {
+  differenceInCalendarDays,
+  format,
+  isAfter,
+  isValid,
+  parse,
+} from 'date-fns';
 import de from 'date-fns/locale/de';
 
 export function isToday(date: Date | string | number) {
   return differenceInCalendarDays(new Date(), date) === 0;
+}
+
+export function isFuture(date: Date | string | number): boolean {
+  return isAfter(date, new Date());
 }
 
 export function parseDate(value: string, formatString: string): Date | null {
