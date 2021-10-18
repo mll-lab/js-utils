@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/mll-lab/js-utils/compare/v2.0.0...v2.1.0) (2021-10-18)
+
+
+### Features
+
+* loosen date argument types ([bc0dd4c](https://github.com/mll-lab/js-utils/commit/bc0dd4ce1fc9e3aecbb2bb692f63b9f861ea32f4))
+
 # [2.0.0](https://github.com/mll-lab/js-utils/compare/v1.4.1...v2.0.0) (2021-10-18)
 
 
