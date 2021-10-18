@@ -2,7 +2,8 @@ import { addDays, subDays } from 'date-fns';
 
 import {
   formatGerman,
-  formatGermanDateTime, isFuture,
+  formatGermanDateTime,
+  isFuture,
   isToday,
   parseGermanDate,
   parseGermanDateFlexible,
