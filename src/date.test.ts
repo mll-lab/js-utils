@@ -1,8 +1,8 @@
-import { addDays, addMinutes, subDays, subMinutes } from 'date-fns';
+import { addDays, subDays } from 'date-fns';
 
 import {
   formatGerman,
-  formatGermanDateTime,
+  formatGermanDateTime, isFuture,
   isToday,
   parseGermanDate,
   parseGermanDateFlexible,
@@ -63,10 +63,15 @@ describe('formatGermanDateTime', () => {
 describe('isToday', () => {
   it('should determine if a date is today', () => {
     expect(isToday(new Date())).toEqual(true);
-    expect(isToday(subMinutes(new Date(), 2))).toEqual(true);
-    expect(isToday(addMinutes(new Date(), 2))).toEqual(true);
-
     expect(isToday(subDays(new Date(), 2))).toEqual(false);
     expect(isToday(addDays(new Date(), 2))).toEqual(false);
+  });
+});
+
+describe('isFuture', () => {
+  it('should determine if a date is in the future', () => {
+    expect(isFuture(new Date())).toEqual(false);
+    expect(isFuture(subDays(new Date(), 2))).toEqual(false);
+    expect(isFuture(addDays(new Date(), 2))).toEqual(true);
   });
 });
