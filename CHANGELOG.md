@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/mll-lab/js-utils/compare/v2.1.0...v2.2.0) (2021-10-18)
+
+
+### Features
+
+* add method isFuture ([f4eb0b9](https://github.com/mll-lab/js-utils/commit/f4eb0b99f4981b092d69ccc7fb2713bb6c437b8e))
+
 # [2.1.0](https://github.com/mll-lab/js-utils/compare/v2.0.0...v2.1.0) (2021-10-18)
 
 
