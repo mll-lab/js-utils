@@ -1,5 +1,11 @@
 import { isEqual, sortBy } from 'lodash';
 
+export type NonEmptyArray<T> = Array<T> & { 0: T };
+
+export function isNonEmptyArray<T>(value: Array<T>): value is NonEmptyArray<T> {
+  return value.length > 0;
+}
+
 /**
  * Return a new array that does not contain the item at the specified index.
  */
@@ -38,4 +44,11 @@ export function insertIf<T>(
   ...elements: Array<T>
 ): Array<T> {
   return condition ? elements : [];
+}
+
+export function last<T, A extends Array<T>>(
+  array: A,
+): A extends NonEmptyArray<T> ? T : T | undefined {
+  // @ts-expect-error too magical
+  return array[array.length - 1];
 }

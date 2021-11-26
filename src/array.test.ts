@@ -1,4 +1,31 @@
-import { containSameValues, insertIf, withoutIndex } from './array';
+import {
+  containSameValues,
+  insertIf,
+  isNonEmptyArray,
+  last,
+  NonEmptyArray,
+  withoutIndex,
+} from './array';
+
+describe('NonEmptyArray', () => {
+  it('can be proven to be non-empty', () => {
+    const array = [1];
+
+    // @ts-expect-error intentionally wrong
+    let nonEmptyArray: NonEmptyArray<unknown> = [];
+
+    // @ts-expect-error intentionally wrong
+    nonEmptyArray = array;
+
+    if (isNonEmptyArray(array)) {
+      nonEmptyArray = array;
+    }
+
+    expect(isNonEmptyArray(nonEmptyArray)).toBe(true);
+    expect(isNonEmptyArray([undefined])).toBe(true);
+    expect(isNonEmptyArray([])).toBe(false);
+  });
+});
 
 describe('withoutIndex', () => {
   it('handles empty arrays', () => {
@@ -38,5 +65,17 @@ describe('insertIf', () => {
 
   it('returns an empty array if the condition is false', () => {
     expect(insertIf(false, 1, 2)).toEqual([]);
+  });
+});
+
+describe('last', () => {
+  it('returns the last element of an array', () => {
+    const array: NonEmptyArray<number> = [1, 2];
+    const actual: number = last(array);
+    expect(actual).toEqual(2);
+  });
+
+  it('returns undefined for empty arrays', () => {
+    expect(last([])).toEqual(undefined);
   });
 });
