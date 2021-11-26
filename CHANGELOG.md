@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/mll-lab/js-utils/compare/v2.2.0...v2.3.0) (2021-11-26)
+
+
+### Features
+
+* add NonEmptyArray and specialized implementation of last() ([5f61c48](https://github.com/mll-lab/js-utils/commit/5f61c48b3ab43bb8047319c18bd4b2e8328e6274))
+
 # [2.2.0](https://github.com/mll-lab/js-utils/compare/v2.1.0...v2.2.0) (2021-10-18)
 
 
