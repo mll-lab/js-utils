@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/mll-lab/js-utils/compare/v2.3.0...v2.4.0) (2021-12-06)
+
+
+### Features
+
+* add string utils ([f950774](https://github.com/mll-lab/js-utils/commit/f950774da1bb6b96a4d2bfe46db3ad97ed3160eb))
+
 # [2.3.0](https://github.com/mll-lab/js-utils/compare/v2.2.0...v2.3.0) (2021-11-26)
 
 
