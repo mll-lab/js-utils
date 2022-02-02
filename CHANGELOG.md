@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/mll-lab/js-utils/compare/v2.4.0...v2.5.0) (2022-02-02)
+
+
+### Features
+
+* add function errorMessage() ([fbc5f33](https://github.com/mll-lab/js-utils/commit/fbc5f3356fa67f0a340fbc5bb570fe5faa36a8cc))
+
 # [2.4.0](https://github.com/mll-lab/js-utils/compare/v2.3.0...v2.4.0) (2021-12-06)
 
 
