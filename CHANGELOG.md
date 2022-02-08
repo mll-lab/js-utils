@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/mll-lab/js-utils/compare/v2.5.0...v2.6.0) (2022-02-08)
+
+
+### Features
+
+* add function isNotNullish ([e7d8b9a](https://github.com/mll-lab/js-utils/commit/e7d8b9a551add1d89892877bd64b3d603a8d4a0f))
+
 # [2.5.0](https://github.com/mll-lab/js-utils/compare/v2.4.0...v2.5.0) (2022-02-02)
 
 
