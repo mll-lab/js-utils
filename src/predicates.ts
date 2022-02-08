@@ -48,3 +48,7 @@ export const isLabId: PredicateFn = (value) =>
 
 export const isRackBarcode: PredicateFn = (value) =>
   isString(value) && /^[A-Z]{2}\d{8}$/.test(value);
+
+export function isNotNullish<T>(value: T | null | undefined): value is T {
+  return value != null;
+}

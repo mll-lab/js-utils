@@ -1,12 +1,17 @@
-import { isLabId, isRackBarcode, PredicateFn } from './predicates';
+import {
+  isLabId,
+  isNotNullish,
+  isRackBarcode,
+  PredicateFn,
+} from './predicates';
 
-function assertInvalid(predicate: PredicateFn, values: Array<any>) {
+function assertFalse(predicate: PredicateFn, values: Array<any>): void {
   test.each(values)(`invalid values for ${predicate.name}`, (value) =>
     expect(predicate(value)).toBe(false),
   );
 }
 
-function assertValid(predicate: PredicateFn, values: Array<any>) {
+function assertTrue(predicate: PredicateFn, values: Array<any>): void {
   test.each(values)(`valid values for ${predicate.name}`, (value) => {
     expect(predicate(value)).toBe(true);
   });
@@ -14,12 +19,17 @@ function assertValid(predicate: PredicateFn, values: Array<any>) {
 
 describe('predicates', () => {
   describe('isLabId', () => {
-    assertValid(isLabId, ['17-123456']);
-    assertInvalid(isLabId, ['asdf', '12345678', '123123123123']);
+    assertTrue(isLabId, ['17-123456']);
+    assertFalse(isLabId, ['asdf', '12345678', '123123123123']);
   });
 
   describe('isRackBarcode', () => {
-    assertValid(isRackBarcode, ['FE12345678']);
-    assertInvalid(isRackBarcode, ['FE123456789', 'fe12345678', '12345678']);
+    assertTrue(isRackBarcode, ['FE12345678']);
+    assertFalse(isRackBarcode, ['FE123456789', 'fe12345678', '12345678']);
+  });
+
+  describe('isNotNullish', () => {
+    assertTrue(isNotNullish, ['', [], {}, false]);
+    assertFalse(isNotNullish, [null, undefined]);
   });
 });
