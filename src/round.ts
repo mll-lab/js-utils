@@ -9,15 +9,15 @@ export function round(number: number, decimalPlaces: number): number {
 }
 
 export function firstDecimalDigit(number: number): number {
-  if(number % 1 === 0) {
+  if (number % 1 === 0) {
     return 0;
   }
 
   const regExp = /\d*\.(\d)/;
-  let regExpMatchArray = number.toString().match(regExp);
+  const regExpMatchArray = number.toString().match(regExp);
 
-  if (null === regExpMatchArray) {
-    throw new Error('Invalid number for regex matching: ' + number)
+  if (regExpMatchArray === null) {
+    throw new Error(`Invalid number for regex matching: ${number}`);
   }
 
   return Number(regExpMatchArray[1]);
