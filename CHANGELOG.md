@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/mll-lab/js-utils/compare/v2.6.0...v2.7.0) (2022-03-14)
+
+
+### Features
+
+* rename module round to number, fix release ([12ff83a](https://github.com/mll-lab/js-utils/commit/12ff83ac742e3eaddbf8815f651693ee633e1d14))
+
 # [2.6.0](https://github.com/mll-lab/js-utils/compare/v2.5.0...v2.6.0) (2022-02-08)
 
 
