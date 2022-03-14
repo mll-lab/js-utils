@@ -1,4 +1,4 @@
-import { firstDecimalDigit, round } from './round';
+import { firstDecimalDigit, round } from './number';
 
 describe('round', () => {
   it.each([
