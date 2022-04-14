@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/mll-lab/js-utils/compare/v2.7.0...v2.8.0) (2022-04-14)
+
+
+### Features
+
+* add string util joinNonEmpty ([#8](https://github.com/mll-lab/js-utils/issues/8)) ([0d9e64b](https://github.com/mll-lab/js-utils/commit/0d9e64bcd864caa2a9009be627ad60422209ce1f))
+
 # [2.7.0](https://github.com/mll-lab/js-utils/compare/v2.6.0...v2.7.0) (2022-03-14)
 
 
