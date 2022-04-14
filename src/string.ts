@@ -12,3 +12,7 @@ export function includesIgnoreCase(
 export function firstLine(multilineText: string): string {
   return multilineText.split('\n', 1)[0];
 }
+
+export function joinNonEmpty(maybeStrings: Array<string | null | undefined>, separator: string): string {
+  return maybeStrings.filter(Boolean).join(separator)
+}

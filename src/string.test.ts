@@ -1,4 +1,4 @@
-import { firstLine, includesIgnoreCase } from './string';
+import {firstLine, includesIgnoreCase, joinNonEmpty} from './string';
 
 describe('includesIgnoreCase', () => {
   it('finds exact match', () => {
@@ -34,3 +34,29 @@ describe('firstLine', () => {
     expect(firstLine('')).toEqual('');
   });
 });
+
+describe('joinNonEmpty', () => {
+  it('handles empty array', () => {
+    expect(joinNonEmpty([], ',')).toEqual('')
+  })
+
+  it('handles array with empty values', () => {
+    expect(joinNonEmpty([null, undefined, ''], ',')).toEqual('')
+  })
+
+  it('handles array with single value', () => {
+    expect(joinNonEmpty(['foo'], ',')).toEqual('foo')
+  })
+
+  it('handles array with multiple values', () => {
+    expect(joinNonEmpty(['foo', 'bar'], ',')).toEqual('foo,bar')
+  })
+
+  it('handles array with mixed values', () => {
+    expect(joinNonEmpty([undefined, 'foo', null, 'bar', ''], ',')).toEqual('foo,bar')
+  })
+
+  it('handles empty separator', () => {
+    expect(joinNonEmpty(['foo', 'bar'], '')).toEqual('foobar')
+  })
+})
