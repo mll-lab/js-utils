@@ -20,17 +20,10 @@ describe('pxToNumber', () => {
     expect(pxToNumber(input)).toEqual(expectedResult);
   });
 
-  it('throws when invalid parameter given', () => {
-    expect(() => pxToNumber('5')).toThrow(/does not contain 'px'/);
-    expect(() => pxToNumber('5ax')).toThrow(/does not contain 'px'/);
-    expect(() => pxToNumber('px')).toThrow(/is not a valid/);
-  });
-
-  it.each([
-    ['5', /does not contain 'px'/],
-    ['5ax', /does not contain 'px'/],
-    ['px', /is not a valid/],
-  ])('throws when invalid parameter given', (input, expectedResult) => {
-    expect(() => pxToNumber(input)).toThrow(expectedResult);
-  });
+  it.each([['5'], ['5ax'], ['px'], ['1px 2px'], ['1px 2px 3px 4px'], ['1px ']])(
+    'throws when invalid parameter %s given',
+    (input) => {
+      expect(() => pxToNumber(input)).toThrow();
+    },
+  );
 });
