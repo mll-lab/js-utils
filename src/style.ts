@@ -1,5 +1,5 @@
 /**
- * Converts pixel value to number (e.g. "4px" to 4).
+ * Converts pixel value to number (e.g. "4px" to 4)
  */
 export function pxToNumber(pixels: string): number {
   if (!pixels.includes('px')) {
