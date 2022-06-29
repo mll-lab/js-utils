@@ -1,7 +1,7 @@
 /**
  * Converts pixel value to number.
  *
- * @exmple "4px" to 4
+ * @example "4px" to 4
  */
 export function pxToNumber(pixels: string): number {
   const count = (pixels.match(/px/g) || []).length;
