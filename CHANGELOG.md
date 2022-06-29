@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/mll-lab/js-utils/compare/v2.8.0...v2.9.0) (2022-06-29)
+
+
+### Features
+
+* add pxToNumber ([#9](https://github.com/mll-lab/js-utils/issues/9)) ([413e52b](https://github.com/mll-lab/js-utils/commit/413e52be7bedb61278397e38e47ef610d3a70f96))
+
 # [2.8.0](https://github.com/mll-lab/js-utils/compare/v2.7.0...v2.8.0) (2022-04-14)
 
 
