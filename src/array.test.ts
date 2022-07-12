@@ -3,7 +3,8 @@ import {
   insertIf,
   isNonEmptyArray,
   last,
-  NonEmptyArray, toggleElement,
+  NonEmptyArray,
+  toggleElement,
   withoutIndex,
 } from './array';
 

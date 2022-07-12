@@ -60,6 +60,6 @@ export function last<T, A extends Array<T>>(
  */
 export function toggleElement<T>(array: Array<T>, element: T): Array<T> {
   return array.includes(element)
-    ? array.filter(e => e !== element)
-    : array.concat(element)
+    ? array.filter((e) => e !== element)
+    : array.concat(element);
 }
