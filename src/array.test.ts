@@ -4,6 +4,7 @@ import {
   isNonEmptyArray,
   last,
   NonEmptyArray,
+  toggleElement,
   withoutIndex,
 } from './array';
 
@@ -77,5 +78,19 @@ describe('last', () => {
 
   it('returns undefined for empty arrays', () => {
     expect(last([])).toEqual(undefined);
+  });
+});
+
+describe('toggleElement', () => {
+  it('removes existing element', () => {
+    expect(toggleElement([1], 1)).toEqual([]);
+  });
+
+  it('appends non-existing element', () => {
+    expect(toggleElement([], 1)).toEqual([1]);
+  });
+
+  it('uses strict comparison', () => {
+    expect(toggleElement([1, '2'], '1')).toEqual([1, '2', '1']);
   });
 });

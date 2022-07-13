@@ -52,3 +52,14 @@ export function last<T, A extends Array<T>>(
   // @ts-expect-error too magical
   return array[array.length - 1];
 }
+
+/**
+ * Appends element to array if not included or removes it.
+ *
+ * Never mutates the given array, always returns a new array.
+ */
+export function toggleElement<T>(array: Array<T>, element: T): Array<T> {
+  return array.includes(element)
+    ? array.filter((e) => e !== element)
+    : array.concat(element);
+}
