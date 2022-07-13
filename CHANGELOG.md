@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/mll-lab/js-utils/compare/v2.9.0...v2.10.0) (2022-07-13)
+
+
+### Features
+
+* add array function toggleElement ([#10](https://github.com/mll-lab/js-utils/issues/10)) ([f873548](https://github.com/mll-lab/js-utils/commit/f873548ac5106ddc6e55e52b841e3fbed9e98b2d))
+
 # [2.9.0](https://github.com/mll-lab/js-utils/compare/v2.8.0...v2.9.0) (2022-06-29)
 
 
