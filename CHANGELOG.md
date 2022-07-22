@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/mll-lab/js-utils/compare/v2.10.0...v2.11.0) (2022-07-22)
+
+
+### Features
+
+* add germanNumber ([#11](https://github.com/mll-lab/js-utils/issues/11)) ([589169e](https://github.com/mll-lab/js-utils/commit/589169e191cfa34cfd9e73a5614ef62ae8d66be7))
+
 # [2.10.0](https://github.com/mll-lab/js-utils/compare/v2.9.0...v2.10.0) (2022-07-13)
 
 
