@@ -1,6 +1,7 @@
 export * from './array';
 export * from './date';
 export * from './error';
+export * from './germanNumber';
 export * from './number';
 export * from './pluralize';
 export * from './predicates';
