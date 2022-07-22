@@ -12,11 +12,11 @@ export function formatGermanNumber(
   value: number | string | null | undefined,
   { defaultValue, ...localeOptions }: FormatNumberOptions = {},
 ): string {
-  if (! value) {
+  if (!value) {
     return '';
   }
 
-  const parsed = typeof value === "string" ? Number.parseFloat(value) : value;
+  const parsed = typeof value === 'string' ? Number.parseFloat(value) : value;
   if (Number.isNaN(parsed)) {
     return defaultValue ?? '';
   }
