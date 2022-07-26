@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/mll-lab/js-utils/compare/v2.11.0...v2.12.0) (2022-07-26)
+
+
+### Features
+
+* Add device utils ([f03cfeb](https://github.com/mll-lab/js-utils/commit/f03cfebdfc8bac6a169bf3ba25ac56219c24176d))
+
 # [2.11.0](https://github.com/mll-lab/js-utils/compare/v2.10.0...v2.11.0) (2022-07-22)
 
 
