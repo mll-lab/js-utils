@@ -15,9 +15,10 @@ export const isAlphanumeric: PredicateFn = (value) =>
 export const isBSNR: PredicateFn = (value) =>
   isString(value) && /^\d{9}$/.test(value);
 
-// Taken from https://emailregex.com/
-// eslint-disable-next-line no-useless-escape
-export const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+// Taken from https://emailregex.com
+export const EMAIL_REGEX =
+  // eslint-disable-next-line no-useless-escape
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export const isEmail: PredicateFn = (value) =>
   isString(value) && EMAIL_REGEX.test(value);
