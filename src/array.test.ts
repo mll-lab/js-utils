@@ -3,7 +3,8 @@ import {
   insertIf,
   isNonEmptyArray,
   last,
-  NonEmptyArray, sortByArray,
+  NonEmptyArray,
+  sortByArray,
   toggleElement,
   withoutIndex,
 } from './array';
@@ -105,10 +106,7 @@ describe('sortByArray', () => {
     const subject = [string4, string2];
     const recipe: Array<string> = [string1, string2, string3, string4];
 
-    expect(sortByArray(subject, recipe)).toStrictEqual([
-      string2,
-      string4,
-    ]);
+    expect(sortByArray(subject, recipe)).toStrictEqual([string2, string4]);
   });
 
   it('result array should have a different order than before', () => {
@@ -183,7 +181,7 @@ describe('sortByArray', () => {
     expect(() => {
       sortByArray(subject, recipe);
     }).toThrow(
-        'Recipe array must only consist of distinct values in order to define a valid order.',
+      'Recipe array must only consist of distinct values in order to define a valid order.',
     );
   });
 });

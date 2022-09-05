@@ -1,4 +1,4 @@
-import {isEqual, sortBy} from 'lodash';
+import { isEqual, sortBy } from 'lodash';
 
 export type NonEmptyArray<T> = Array<T> & { 0: T };
 
@@ -74,12 +74,12 @@ export function toggleElement<T>(array: Array<T>, element: T): Array<T> {
  *          returns sorted array [Jan, Mar, Dec]
  */
 export function sortByArray<T extends string | number>(
-    subject: Array<T>,
-    recipe: Array<T>,
+  subject: Array<T>,
+  recipe: Array<T>,
 ): Array<T> {
   if (new Set(recipe).size !== recipe.length) {
     throw new Error(
-        'Recipe array must only consist of distinct values in order to define a valid order.',
+      'Recipe array must only consist of distinct values in order to define a valid order.',
     );
   }
 
