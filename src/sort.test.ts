@@ -1,4 +1,4 @@
-import { sortByCustomOrder } from '../sort';
+import { sortByCustomOrder } from './sort';
 
 describe('sortByCustomOrder', () => {
   it('change order of elements by given custom order', () => {
