@@ -1,4 +1,4 @@
-import { isEqual, sortBy } from 'lodash';
+import {isEqual, sortBy} from 'lodash';
 
 export type NonEmptyArray<T> = Array<T> & { 0: T };
 
@@ -49,7 +49,6 @@ export function insertIf<T>(
 export function last<T, A extends Array<T>>(
   array: A,
 ): A extends NonEmptyArray<T> ? T : T | undefined {
-  // @ts-expect-error too magical
   return array[array.length - 1];
 }
 
@@ -62,4 +61,27 @@ export function toggleElement<T>(array: Array<T>, element: T): Array<T> {
   return array.includes(element)
     ? array.filter((e) => e !== element)
     : array.concat(element);
+}
+
+/**
+ * Sorts an array according to the order of the elements in a given recipe array.
+ *
+ * @param subject The array to sort.
+ * @param recipe The recipe to sort by. Must be a set, an error is thrown if it contains duplicate values.
+ *
+ * @example array to sort [Dec, Jan, Mar]
+ *          sort by recipe [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+ *          returns sorted array [Jan, Mar, Dec]
+ */
+export function sortByArray<T extends string | number>(
+    subject: Array<T>,
+    recipe: Array<T>,
+): Array<T> {
+  if (new Set(recipe).size !== recipe.length) {
+    throw new Error(
+        'Recipe array must only consist of distinct values in order to define a valid order.',
+    );
+  }
+
+  return sortBy(subject, (value) => recipe.indexOf(value));
 }

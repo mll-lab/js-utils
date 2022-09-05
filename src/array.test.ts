@@ -3,7 +3,7 @@ import {
   insertIf,
   isNonEmptyArray,
   last,
-  NonEmptyArray,
+  NonEmptyArray, sortByArray,
   toggleElement,
   withoutIndex,
 } from './array';
@@ -92,5 +92,98 @@ describe('toggleElement', () => {
 
   it('uses strict comparison', () => {
     expect(toggleElement([1, '2'], '1')).toEqual([1, '2', '1']);
+  });
+});
+
+describe('sortByArray', () => {
+  it('change order of elements by given custom order', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+    const string3 = 'c';
+    const string4 = 'd';
+
+    const subject = [string4, string2];
+    const recipe: Array<string> = [string1, string2, string3, string4];
+
+    expect(sortByArray(subject, recipe)).toStrictEqual([
+      string2,
+      string4,
+    ]);
+  });
+
+  it('result array should have a different order than before', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+    const string3 = 'c';
+    const string4 = 'd';
+
+    const subject = [string4, string2];
+    const recipe: Array<string> = [string1, string2, string3, string4];
+
+    expect(sortByArray(subject, recipe)).not.toStrictEqual(subject);
+  });
+
+  it('sorting should also work if recipe includes differing values', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+    const string3 = 'c';
+    const string4 = 'd';
+
+    const subject = [string4, string2];
+    const recipe: Array<string> = [string1, string2, string3, string4];
+
+    expect(sortByArray(subject, recipe)).not.toStrictEqual(recipe);
+  });
+
+  it("empty subject array isn't sorted", () => {
+    const string1 = 'a';
+    const string2 = 'b';
+    const string3 = 'c';
+    const string4 = 'd';
+
+    const subject: Array<string> = [];
+    const recipe: Array<string> = [string1, string2, string3, string4];
+
+    expect(sortByArray(subject, recipe)).toStrictEqual(subject);
+  });
+
+  it('empty recipe array has no effect', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+
+    const subject: Array<string> = [string1, string2];
+    const recipe: Array<string> = [];
+
+    expect(sortByArray(subject, recipe)).toStrictEqual(subject);
+  });
+
+  it('multiple values in subject array are sorted correctly', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+    const string3 = 'c';
+    const string4 = 'd';
+
+    const subject: Array<string> = [string2, string1, string1];
+    const recipe: Array<string> = [string1, string2, string3, string4];
+
+    expect(sortByArray(subject, recipe)).toStrictEqual([
+      string1,
+      string1,
+      string2,
+    ]);
+  });
+
+  it('multiple values in recipe array lead to error', () => {
+    const string1 = 'a';
+    const string2 = 'b';
+
+    const subject: Array<string> = [string2, string1];
+    const recipe: Array<string> = [string1, string2, string1];
+
+    expect(() => {
+      sortByArray(subject, recipe);
+    }).toThrow(
+        'Recipe array must only consist of distinct values in order to define a valid order.',
+    );
   });
 });
