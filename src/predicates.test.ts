@@ -5,13 +5,13 @@ import {
   PredicateFn,
 } from './predicates';
 
-function assertFalse(predicate: PredicateFn, values: Array<any>): void {
+function assertFalse(predicate: PredicateFn, values: Array<unknown>): void {
   test.each(values)(`invalid values for ${predicate.name}`, (value) =>
     expect(predicate(value)).toBe(false),
   );
 }
 
-function assertTrue(predicate: PredicateFn, values: Array<any>): void {
+function assertTrue(predicate: PredicateFn, values: Array<unknown>): void {
   test.each(values)(`valid values for ${predicate.name}`, (value) => {
     expect(predicate(value)).toBe(true);
   });
