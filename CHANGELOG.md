@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/mll-lab/js-utils/compare/v2.12.0...v2.13.0) (2022-09-05)
+
+
+### Features
+
+* add function sortByArray ([#13](https://github.com/mll-lab/js-utils/issues/13)) ([9141412](https://github.com/mll-lab/js-utils/commit/9141412adcbdf3efa44c20ea8d307e21664f6ced))
+
 # [2.12.0](https://github.com/mll-lab/js-utils/compare/v2.11.0...v2.12.0) (2022-07-26)
 
 
