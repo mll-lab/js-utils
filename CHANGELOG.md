@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/mll-lab/js-utils/compare/v2.13.0...v2.14.0) (2022-09-13)
+
+
+### Features
+
+* add file download ([42f9b66](https://github.com/mll-lab/js-utils/commit/42f9b66ce051859b6245418bca23dc09f409630f))
+
 # [2.13.0](https://github.com/mll-lab/js-utils/compare/v2.12.0...v2.13.0) (2022-09-05)
 
 
