@@ -4,7 +4,9 @@ export function isString(value: unknown): value is string {
   return typeof value === 'string';
 }
 
-export const isAlphanumeric: PredicateFn = function (value): value is string {
+export const isAlphanumeric: PredicateFn = function isAlphanumeric(
+  value,
+): value is string {
   return isString(value) && /^[A-Za-z0-9]+$/.test(value);
 };
 
@@ -13,7 +15,7 @@ export const isAlphanumeric: PredicateFn = function (value): value is string {
  * für alle vertrags(zahn)ärztlichen Leistungserbringer gültig
  * und klar abzugrenzen vom Institutskennzeichen (IK-Nummer) eines Krankenhauses.
  */
-export const isBSNR: PredicateFn = function (value): value is string {
+export const isBSNR: PredicateFn = function isBSNR(value): value is string {
   return isString(value) && /^\d{9}$/.test(value);
 };
 
@@ -22,15 +24,17 @@ export const EMAIL_REGEX =
   // eslint-disable-next-line no-useless-escape
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export const isEmail: PredicateFn = function (value): value is string {
+export const isEmail: PredicateFn = function isEmail(value): value is string {
   return isString(value) && EMAIL_REGEX.test(value);
 };
 
-export const isOnlyDigits: PredicateFn = function (value): value is string {
+export const isOnlyDigits: PredicateFn = function isOnlyDigits(
+  value,
+): value is string {
   return isString(value) && /^\d+$/.test(value);
 };
 
-export const isURL: PredicateFn = function (value): value is string {
+export const isURL: PredicateFn = function isURL(value): value is string {
   if (!isString(value)) {
     return false;
   }
@@ -45,18 +49,22 @@ export const isURL: PredicateFn = function (value): value is string {
   }
 };
 
-export const isWord: PredicateFn = function (value): value is string {
+export const isWord: PredicateFn = function isWord(value): value is string {
   return isString(value) && /^[\w-]+$/.test(value);
 };
 
-export const isLabId: PredicateFn = function (value): value is string {
+export const isLabId: PredicateFn = function isLabId(value): value is string {
   return isString(value) && /^\d{2}-\d{6}$/.test(value);
 };
 
-export const isRackBarcode: PredicateFn = function (value): value is string {
+export const isRackBarcode: PredicateFn = function isRackBarcode(
+  value,
+): value is string {
   return isString(value) && /^[A-Z]{2}\d{8}$/.test(value);
 };
 
-export function isNotNullish<T>(value: T | null | undefined): value is T {
+export const isNotNullish: PredicateFn = function isNotNullish<T>(
+  value: T | null | undefined,
+): value is T {
   return value != null;
-}
+};
