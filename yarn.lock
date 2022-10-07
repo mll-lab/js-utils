@@ -1236,10 +1236,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@mll-lab/eslint-config@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@mll-lab/eslint-config/-/eslint-config-1.18.0.tgz#8714f155d1571a8d03b78589e4d345ccfa5bd41d"
-  integrity sha512-bOMd6uYAq/rMEh323uWe8VEAwCkLkuV6G2z59J8iuxtRPMHqgSwQOHQwsIwiwCEVZtN7Dmk7P8hbphXvn1/mKw==
+"@mll-lab/eslint-config@^1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@mll-lab/eslint-config/-/eslint-config-1.19.0.tgz#ec548315f5954ef2e37aacc89f473bf6e6e3cc86"
+  integrity sha512-4Jp7YRxE1cvO9D8gACKQAI7hN6vEQxeHKOKSibswpoUXW+Y5h3+B391k9n/5yTftywBUb5QJBIkbcEoXHAMJNg==
   dependencies:
     "@getify/eslint-plugin-proper-arrows" "^11.0.3"
     "@typescript-eslint/eslint-plugin" "^5.10.2"
