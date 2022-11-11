@@ -1,4 +1,4 @@
-import {callSequentially, mapSequentially } from './promise';
+import { callSequentially, mapSequentially } from './promise';
 
 describe('callSequentially', () => {
   it('throws and aborts if callback throws', async () => {
