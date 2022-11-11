@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/mll-lab/js-utils/compare/v2.14.0...v2.15.0) (2022-11-11)
+
+
+### Features
+
+* add promise functions `callSequentially` and `mapSequentially` ([64e00ae](https://github.com/mll-lab/js-utils/commit/64e00aeb119671580e6111b02837bf1bacef9e71))
+
 # [2.14.0](https://github.com/mll-lab/js-utils/compare/v2.13.0...v2.14.0) (2022-09-13)
 
 
