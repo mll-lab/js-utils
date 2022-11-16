@@ -1,3 +1,15 @@
+## [2.15.3](https://github.com/mll-lab/js-utils/compare/v2.15.2...v2.15.3) (2022-11-16)
+
+
+### Bug Fixes
+
+* ensure only type guards are declared with type guards ([447b8d6](https://github.com/mll-lab/js-utils/commit/447b8d6aeabc523b3737412b464fd9a02bca112e))
+
+
+### Reverts
+
+* Revert "fix: ensure predicates are declared with type guards (#18)" ([2e3382f](https://github.com/mll-lab/js-utils/commit/2e3382f8e455606d6f2636a7da54d531bf4dffa1)), closes [#18](https://github.com/mll-lab/js-utils/issues/18)
+
 ## [2.15.2](https://github.com/mll-lab/js-utils/compare/v2.15.1...v2.15.2) (2022-11-16)
 
 
