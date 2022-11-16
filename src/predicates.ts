@@ -64,7 +64,7 @@ export const isRackBarcode: PredicateFn = function isRackBarcode(
 };
 
 export const isNotNullish: PredicateFn = function isNotNullish<T>(
-  value: T | null | undefined,
-): value is T {
+  value: T,
+): value is Exclude<T, null | undefined> {
   return value != null;
 };
