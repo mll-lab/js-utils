@@ -1,3 +1,10 @@
+## [2.15.1](https://github.com/mll-lab/js-utils/compare/v2.15.0...v2.15.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* use Exclude to make isNotNullish type guard work as intended ([#17](https://github.com/mll-lab/js-utils/issues/17)) ([4dce69b](https://github.com/mll-lab/js-utils/commit/4dce69bcb9e53bb69c436cb10ce76482037fa4f8))
+
 # [2.15.0](https://github.com/mll-lab/js-utils/compare/v2.14.0...v2.15.0) (2022-11-11)
 
 
