@@ -1,17 +1,19 @@
-import {
-  isLabId,
-  isNotNullish,
-  isRackBarcode,
-  PredicateFn,
-} from './predicates';
+import { isLabId, isRackBarcode, PredicateFn } from './predicates';
+import { isNotNullish } from './typeGuards';
 
-function assertFalse(predicate: PredicateFn, values: Array<unknown>): void {
+export function assertFalse(
+  predicate: PredicateFn,
+  values: Array<unknown>,
+): void {
   test.each(values)(`invalid values for ${predicate.name}`, (value) =>
     expect(predicate(value)).toBe(false),
   );
 }
 
-function assertTrue(predicate: PredicateFn, values: Array<unknown>): void {
+export function assertTrue(
+  predicate: PredicateFn,
+  values: Array<unknown>,
+): void {
   test.each(values)(`valid values for ${predicate.name}`, (value) => {
     expect(predicate(value)).toBe(true);
   });

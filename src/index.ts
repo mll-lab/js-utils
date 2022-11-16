@@ -11,3 +11,5 @@ export * from './predicates';
 export * from './promise';
 export * from './string';
 export * from './style';
+export { isString } from './typeGuards';
+export { isNotNullish } from './typeGuards';

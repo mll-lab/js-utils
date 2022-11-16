@@ -1,8 +1,6 @@
-export type PredicateFn = (value: unknown) => boolean;
+import { isString } from './typeGuards';
 
-export function isString(value: unknown): value is string {
-  return typeof value === 'string';
-}
+export type PredicateFn = (value: unknown) => boolean;
 
 export const isAlphanumeric: PredicateFn = function isAlphanumeric(
   value,
@@ -18,8 +16,8 @@ export const isAlphanumeric: PredicateFn = function isAlphanumeric(
 export const isBSNR: PredicateFn = function isBSNR(value): value is string {
   return isString(value) && /^\d{9}$/.test(value);
 };
-
 // Taken from https://emailregex.com
+
 export const EMAIL_REGEX =
   // eslint-disable-next-line no-useless-escape
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -61,10 +59,4 @@ export const isRackBarcode: PredicateFn = function isRackBarcode(
   value,
 ): value is string {
   return isString(value) && /^[A-Z]{2}\d{8}$/.test(value);
-};
-
-export const isNotNullish: PredicateFn = function isNotNullish<T>(
-  value: T,
-): value is Exclude<T, null | undefined> {
-  return value != null;
 };
