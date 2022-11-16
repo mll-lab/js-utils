@@ -1,3 +1,10 @@
+## [2.15.2](https://github.com/mll-lab/js-utils/compare/v2.15.1...v2.15.2) (2022-11-16)
+
+
+### Bug Fixes
+
+* ensure predicates are declared with type guards ([#18](https://github.com/mll-lab/js-utils/issues/18)) ([5492d21](https://github.com/mll-lab/js-utils/commit/5492d21cedcbe784570afa67b2753f36600b47a1))
+
 ## [2.15.1](https://github.com/mll-lab/js-utils/compare/v2.15.0...v2.15.1) (2022-11-16)
 
 
