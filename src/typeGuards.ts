@@ -4,6 +4,6 @@ export function isString(value: unknown): value is string {
 
 export function isNotNullish<T>(
   value: T,
-): value is Exclude<T, null | undefined> {
+): value is NonNullable<T> {
   return value != null;
 }
