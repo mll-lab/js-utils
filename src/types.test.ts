@@ -1,32 +1,42 @@
-import {DeepPartial, Either, Exact, Maybe, MaybePromise, Modify,  ValueOf} from "./types";
+import {
+  DeepPartial,
+  Either,
+  Exact,
+  Maybe,
+  MaybePromise,
+  Modify,
+  ValueOf,
+} from './types';
 
 type Bar = {
-    baz: number;
+  baz: number;
 };
 
 type Obj = {
-    foo: string;
-    bar: Bar;
-}
+  foo: string;
+  bar: Bar;
+};
 
 // DeepPartial
-export const allowsAssigningEmptyObjectToDeepPartial: DeepPartial<Obj> = {}
+export const allowsAssigningEmptyObjectToDeepPartial: DeepPartial<Obj> = {};
 
 // MaybePromise
-export async function acceptsMaybePromise(v: MaybePromise<number>): Promise<number> {
-    const resolved = await v;
-    return resolved * 2
+export async function acceptsMaybePromise(
+  v: MaybePromise<number>,
+): Promise<number> {
+  const resolved = await v;
+  return resolved * 2;
 }
 
 // Modify
 export const modifiedType: Modify<Obj, { foo: number }> = {
-    foo: 2,
-    bar: { baz: 3}
-}
+  foo: 2,
+  bar: { baz: 3 },
+};
 
 // ValueOf
 export function acceptsValueOf(v: ValueOf<Obj>): string | Bar {
-    return v
+  return v;
 }
 
 // Maybe
@@ -37,18 +47,18 @@ export const maybeAllowsT: Maybe<number> = 1;
 export const maybeDoesNotAllowOtherType: Maybe<number> = 'string';
 
 // Either
-type BarOrObj = Either<Bar, Obj>
-export const onlyFoo: BarOrObj = { foo: 'asdf', bar: {baz: 2}}
-export const onlyBar: BarOrObj = { baz: 2}
+type BarOrObj = Either<Bar, Obj>;
+export const onlyFoo: BarOrObj = { foo: 'asdf', bar: { baz: 2 } };
+export const onlyBar: BarOrObj = { baz: 2 };
 // @ts-expect-error intentionally wrong
-export const both: BarOrObj = { foo: 'asdf', bar: {baz: 2}, baz: 3}
+export const both: BarOrObj = { foo: 'asdf', bar: { baz: 2 }, baz: 3 };
 // @ts-expect-error intentionally wrong
-export const none: BarOrObj = {}
+export const none: BarOrObj = {};
 
 // Exact
-type ExactlyBar = Exact<Bar>
-export const exactlyBar: ExactlyBar = {baz: 3}
+type ExactlyBar = Exact<Bar>;
+export const exactlyBar: ExactlyBar = { baz: 3 };
 // @ts-expect-error intentionally wrong
-export const lessThanBar: ExactlyBar = {}
+export const lessThanBar: ExactlyBar = {};
 // @ts-expect-error intentionally wrong
-export const moreThanBar: ExactlyBar = {}
+export const moreThanBar: ExactlyBar = {};
