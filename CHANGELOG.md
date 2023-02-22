@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/mll-lab/js-utils/compare/v2.15.3...v2.16.0) (2023-02-22)
+
+
+### Features
+
+* add type helpers ([#19](https://github.com/mll-lab/js-utils/issues/19)) ([9570ee7](https://github.com/mll-lab/js-utils/commit/9570ee7093038eb9bf06ea86fbc32112b24b5e12))
+
 ## [2.15.3](https://github.com/mll-lab/js-utils/compare/v2.15.2...v2.15.3) (2022-11-16)
 
 
