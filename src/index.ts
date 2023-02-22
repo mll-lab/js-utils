@@ -11,5 +11,5 @@ export * from './predicates';
 export * from './promise';
 export * from './string';
 export * from './style';
-export * from './types';
 export * from './typeGuards';
+export * from './types';
