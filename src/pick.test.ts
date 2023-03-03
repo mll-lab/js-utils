@@ -1,5 +1,6 @@
-import { pick } from './pick';
 import { pick as lodashPick } from 'lodash';
+
+import { pick } from './pick';
 
 describe('pick', () => {
   it('picks a prop', () => {
