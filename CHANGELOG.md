@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/mll-lab/js-utils/compare/v2.16.0...v2.17.0) (2023-03-03)
+
+
+### Features
+
+* add strict pick ([#20](https://github.com/mll-lab/js-utils/issues/20)) ([ddebfc7](https://github.com/mll-lab/js-utils/commit/ddebfc7ef114dc4bd708b70562f43c7f65969201))
+
 # [2.16.0](https://github.com/mll-lab/js-utils/compare/v2.15.3...v2.16.0) (2023-02-22)
 
 
