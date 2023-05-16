@@ -20,6 +20,9 @@ describe('formatGermanNumber', () => {
     expect(
       formatGermanNumber(123.123456789, { maximumFractionDigits: 2 }),
     ).toBe('123,12');
+    expect(
+      formatGermanNumber(123.123456789, { maximumFractionDigits: 7 }),
+    ).toBe('123,1234567');
     expect(formatGermanNumber(123.16, { maximumFractionDigits: 1 })).toBe(
       '123,2',
     );
