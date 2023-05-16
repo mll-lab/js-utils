@@ -22,7 +22,7 @@ describe('formatGermanNumber', () => {
     ).toBe('123,12');
     expect(
       formatGermanNumber(123.123456789, { maximumFractionDigits: 7 }),
-    ).toBe('123,1234567');
+    ).toBe('123,1234568');
     expect(formatGermanNumber(123.16, { maximumFractionDigits: 1 })).toBe(
       '123,2',
     );
