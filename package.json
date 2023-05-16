@@ -1,6 +1,6 @@
 {
   "name": "@mll-lab/js-utils",
-  "version": "2.17.0",
+  "version": "2.17.1",
   "main": "dist/index.common.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

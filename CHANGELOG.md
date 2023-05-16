@@ -1,3 +1,10 @@
+## [2.17.1](https://github.com/mll-lab/js-utils/compare/v2.17.0...v2.17.1) (2023-05-16)
+
+
+### Bug Fixes
+
+* allow to define maximumFractionDigits ([#21](https://github.com/mll-lab/js-utils/issues/21)) ([c709e61](https://github.com/mll-lab/js-utils/commit/c709e6168ef496cd23e1f7ba051194143fe1147e))
+
 # [2.17.0](https://github.com/mll-lab/js-utils/compare/v2.16.0...v2.17.0) (2023-03-03)
 
 
