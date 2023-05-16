@@ -22,8 +22,8 @@ export function formatGermanNumber(
   }
 
   return parsed.toLocaleString('de-DE', {
-    ...localeOptions,
     maximumFractionDigits: 6,
+    ...localeOptions,
   });
 }
 
