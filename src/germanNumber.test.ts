@@ -11,9 +11,21 @@ describe('formatGermanNumber', () => {
     expect(formatGermanNumber(123.123)).toBe('123,123');
     expect(formatGermanNumber(-123)).toBe('-123');
     expect(formatGermanNumber(123456)).toBe('123.456');
-    expect(formatGermanNumber(123456.1234567)).toBe('123.456,123457');
+    expect(formatGermanNumber(123456.1234566)).toBe('123.456,123457');
     expect(formatGermanNumber(null)).toBe('');
     expect(formatGermanNumber(Infinity)).toBe('∞');
+  });
+
+  it('defines maximumFractionDigits', () => {
+    expect(
+      formatGermanNumber(123.123456789, { maximumFractionDigits: 2 }),
+    ).toBe('123,12');
+    expect(formatGermanNumber(123.16, { maximumFractionDigits: 1 })).toBe(
+      '123,2',
+    );
+    expect(formatGermanNumber(123.123, { maximumFractionDigits: 4 })).toBe(
+      '123,123',
+    );
   });
 });
 

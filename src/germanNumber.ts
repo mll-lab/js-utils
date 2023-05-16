@@ -21,9 +21,14 @@ export function formatGermanNumber(
     return defaultValue ?? '';
   }
 
+  let { maximumFractionDigits } = localeOptions;
+  if (!maximumFractionDigits || maximumFractionDigits > 6) {
+    maximumFractionDigits = 6;
+  }
+
   return parsed.toLocaleString('de-DE', {
     ...localeOptions,
-    maximumFractionDigits: 6,
+    maximumFractionDigits,
   });
 }
 
