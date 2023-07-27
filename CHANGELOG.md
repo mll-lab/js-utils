@@ -1,3 +1,10 @@
+# [2.18.0](https://github.com/mll-lab/js-utils/compare/v2.17.1...v2.18.0) (2023-07-27)
+
+
+### Features
+
+* add formatGermanTimeHourMinute ([bbce392](https://github.com/mll-lab/js-utils/commit/bbce3920a101ca3def7da35444a4d9fcb95f4593))
+
 ## [2.17.1](https://github.com/mll-lab/js-utils/compare/v2.17.0...v2.17.1) (2023-05-16)
 
 
