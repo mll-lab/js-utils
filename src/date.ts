@@ -80,3 +80,7 @@ export function parseDotlessDate(value: string): Date | null {
 export function formatDotlessDate(date: Date | string | number): string {
   return format(date, DOTLESS_DATE_FORMAT, { locale: de });
 }
+
+export function formatGermanTimeHourMinute(date: string): string {
+  return format(date, 'HH:mm');
+}
