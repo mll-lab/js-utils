@@ -1,3 +1,10 @@
+# [2.20.0](https://github.com/mll-lab/js-utils/compare/v2.19.0...v2.20.0) (2023-10-17)
+
+
+### Features
+
+* add function isEmptyArray ([c250212](https://github.com/mll-lab/js-utils/commit/c25021203345108a7b93a40ed8d81af88f5f689a))
+
 # [2.19.0](https://github.com/mll-lab/js-utils/compare/v2.18.0...v2.19.0) (2023-10-17)
 
 
