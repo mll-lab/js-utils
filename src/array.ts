@@ -8,6 +8,10 @@ export function isNonEmptyArray<T>(value: Array<T>): value is NonEmptyArray<T> {
   return value.length > 0;
 }
 
+export function isEmptyArray(value: unknown): value is [] {
+  return value instanceof Array && value.length === 0;
+}
+
 /**
  * Return a new array that does not contain the item at the specified index.
  */
