@@ -3,11 +3,13 @@ import {
   insertIf,
   isNonEmptyArray,
   last,
+  makeStringCompareFn,
   NonEmptyArray,
   sortByArray,
   toggleElement,
   withoutIndex,
 } from './array';
+import { Maybe } from './types';
 
 describe('NonEmptyArray', () => {
   it('can be proven to be non-empty', () => {
@@ -183,5 +185,32 @@ describe('sortByArray', () => {
     }).toThrow(
       'Recipe array must only consist of distinct values in order to define a valid order.',
     );
+  });
+});
+
+describe('makeStringCompareFn', () => {
+  it('creates a compare function that sorts strings', () => {
+    type MaybeKeyString = { key?: Maybe<string> };
+    const compareFn = makeStringCompareFn<MaybeKeyString>(
+      (record) => record.key,
+    );
+    const original: Array<MaybeKeyString> = [
+      { key: 'c' },
+      { key: '' },
+      { key: undefined },
+      { key: 'a' },
+      { key: null },
+      { key: 'b' },
+      {},
+    ];
+    expect(original.sort(compareFn)).toEqual([
+      { key: '' },
+      { key: undefined },
+      { key: null },
+      {},
+      { key: 'a' },
+      { key: 'b' },
+      { key: 'c' },
+    ]);
   });
 });
