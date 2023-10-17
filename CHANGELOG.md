@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/mll-lab/js-utils/compare/v2.18.0...v2.19.0) (2023-10-17)
+
+
+### Features
+
+* add makeStringCompareFn ([13f6b4c](https://github.com/mll-lab/js-utils/commit/13f6b4cb7dceb6e92cc76940e22a85f2bf84c0e3))
+
 # [2.18.0](https://github.com/mll-lab/js-utils/compare/v2.17.1...v2.18.0) (2023-07-27)
 
 
