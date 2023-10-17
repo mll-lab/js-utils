@@ -1,6 +1,7 @@
 import {
   containSameValues,
   insertIf,
+  isEmptyArray,
   isNonEmptyArray,
   last,
   makeStringCompareFn,
@@ -28,6 +29,17 @@ describe('NonEmptyArray', () => {
     expect(isNonEmptyArray(nonEmptyArray)).toBe(true);
     expect(isNonEmptyArray([undefined])).toBe(true);
     expect(isNonEmptyArray([])).toBe(false);
+  });
+});
+
+describe('isEmptyArray', () => {
+  it('matches only exactly the empty array', () => {
+    expect(isEmptyArray([])).toBe(true);
+    expect(isEmptyArray([1])).toBe(false);
+    expect(isEmptyArray([null])).toBe(false);
+    expect(isEmptyArray([[]])).toBe(false);
+    expect(isEmptyArray(null)).toBe(false);
+    expect(isEmptyArray(undefined)).toBe(false);
   });
 });
 
