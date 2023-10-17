@@ -1,5 +1,7 @@
 import { isEqual, sortBy } from 'lodash';
 
+import { Maybe } from './types';
+
 export type NonEmptyArray<T> = Array<T> & { 0: T };
 
 export function isNonEmptyArray<T>(value: Array<T>): value is NonEmptyArray<T> {
@@ -84,4 +86,21 @@ export function sortByArray<T extends string | number>(
   }
 
   return sortBy(subject, (value) => recipe.indexOf(value));
+}
+
+/**
+ * Takes a function that maps the values to sort and returns a compare function
+ * using `String.prototype.localeCompare`, usable in `Array.sort` or similar APIs.
+ *
+ * null, undefined and the empty string are not distinguished and first in sort order.
+ */
+export function makeStringCompareFn<TSortable>(
+  map: (sortable: TSortable) => Maybe<string>,
+): (a: TSortable, b: TSortable) => number {
+  return (a, b) => {
+    const mappedA = map(a) ?? '';
+    const mappedB = map(b) ?? '';
+
+    return mappedA.localeCompare(mappedB);
+  };
 }
