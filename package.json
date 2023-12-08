@@ -14,7 +14,7 @@
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore --ext .ts .",
-    "format": "yarn run lint --fix",
+    "fix": "yarn run lint --fix",
     "release": "standard-version"
   },
   "repository": {
