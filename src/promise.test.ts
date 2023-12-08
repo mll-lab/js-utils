@@ -33,9 +33,11 @@ describe('mapSequentially', () => {
   });
 
   it('throws and aborts if callback throws', async () => {
-    const callback = jest.fn().mockImplementation((value) => {
-      throw new Error(value);
-    });
+    const callback = jest
+      .fn()
+      .mockImplementation((value: string | undefined) => {
+        throw new Error(value);
+      });
 
     const foo = 'foo';
     await expect(async () => {
