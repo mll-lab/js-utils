@@ -6,7 +6,7 @@ describe('isMobileDevice', () => {
       () =>
         ({
           userAgent: 'Android',
-        } as Navigator & typeof global),
+        }) as Navigator & typeof global,
     );
     expect(isMobileDevice()).toBeTruthy();
   });
@@ -16,7 +16,7 @@ describe('isMobileDevice', () => {
       () =>
         ({
           userAgent: 'Firefox',
-        } as Navigator & typeof global),
+        }) as Navigator & typeof global,
     );
     expect(isMobileDevice()).toBeFalsy();
   });
