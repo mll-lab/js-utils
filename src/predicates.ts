@@ -9,16 +9,19 @@ export const isAlphanumeric: PredicateFn = function isAlphanumeric(
 };
 
 /**
- * BSNR (Betriebsstättennummer) ist eine eindeutige Zuordnung von Leistungen zu dem entsprechenden Ort der Leistungserbringung ermöglicht,
- * für alle vertrags(zahn)ärztlichen Leistungserbringer gültig
+ * Die BSNR (Betriebsstättennummer) ist eine neunstellige Zahl, die eine eindeutige Zuordnung
+ * von Leistungen zu dem entsprechenden Ort der Leistungserbringung ermöglicht.
+ * Die BSNR ist für alle vertrags(zahn)ärztlichen Leistungserbringer gültig
  * und klar abzugrenzen vom Institutskennzeichen (IK-Nummer) eines Krankenhauses.
+ *
+ * https://reimbursement.institute/glossar/bsnr-betriebsstaettennummer
  */
 export const isBSNR: PredicateFn = function isBSNR(value): value is string {
   return isString(value) && /^\d{9}$/.test(value);
 };
-// Taken from https://emailregex.com
 
 export const EMAIL_REGEX =
+  // Taken from https://emailregex.com
   // eslint-disable-next-line no-useless-escape
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
