@@ -1,3 +1,11 @@
+## [2.20.1](https://github.com/mll-lab/js-utils/compare/v2.20.0...v2.20.1) (2023-12-08)
+
+
+### Bug Fixes
+
+* update semantic-release ([8517970](https://github.com/mll-lab/js-utils/commit/8517970f98695cd0b7c9287c4b817d31191612d7))
+* update semantic-release ([4b08405](https://github.com/mll-lab/js-utils/commit/4b084051da6d34699da85cec2770aa10e14ca12d))
+
 # [2.20.0](https://github.com/mll-lab/js-utils/compare/v2.19.0...v2.20.0) (2023-10-17)
 
 
