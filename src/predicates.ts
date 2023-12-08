@@ -29,10 +29,20 @@ export const isEmail: PredicateFn = function isEmail(value): value is string {
   return isString(value) && EMAIL_REGEX.test(value);
 };
 
+export const isLabId: PredicateFn = function isLabId(value): value is string {
+  return isString(value) && /^\d{2}-\d{6}$/.test(value);
+};
+
 export const isOnlyDigits: PredicateFn = function isOnlyDigits(
   value,
+): value is string | number {
+  return (isString(value) && /^\d+$/.test(value)) || Number.isInteger(value);
+};
+
+export const isRackBarcode: PredicateFn = function isRackBarcode(
+  value,
 ): value is string {
-  return isString(value) && /^\d+$/.test(value);
+  return isString(value) && /^[A-Z]{2}\d{8}$/.test(value);
 };
 
 export const isURL: PredicateFn = function isURL(value): value is string {
@@ -52,14 +62,4 @@ export const isURL: PredicateFn = function isURL(value): value is string {
 
 export const isWord: PredicateFn = function isWord(value): value is string {
   return isString(value) && /^[\w-]+$/.test(value);
-};
-
-export const isLabId: PredicateFn = function isLabId(value): value is string {
-  return isString(value) && /^\d{2}-\d{6}$/.test(value);
-};
-
-export const isRackBarcode: PredicateFn = function isRackBarcode(
-  value,
-): value is string {
-  return isString(value) && /^[A-Z]{2}\d{8}$/.test(value);
 };

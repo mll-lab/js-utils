@@ -1,5 +1,9 @@
-import { isLabId, isRackBarcode, PredicateFn } from './predicates';
-import { isNotNullish } from './typeGuards';
+import {
+  isLabId,
+  isOnlyDigits,
+  isRackBarcode,
+  PredicateFn,
+} from './predicates';
 
 export function assertFalse(
   predicate: PredicateFn,
@@ -25,13 +29,13 @@ describe('predicates', () => {
     assertFalse(isLabId, ['asdf', '12345678', '123123123123']);
   });
 
+  describe('isOnlyDigits', () => {
+    assertTrue(isOnlyDigits, ['123', 123]);
+    assertFalse(isOnlyDigits, ['12x', 'x12', '1,2', '1.2', 1.2]);
+  });
+
   describe('isRackBarcode', () => {
     assertTrue(isRackBarcode, ['FE12345678']);
     assertFalse(isRackBarcode, ['FE123456789', 'fe12345678', '12345678']);
-  });
-
-  describe('isNotNullish', () => {
-    assertTrue(isNotNullish, ['', [], {}, false]);
-    assertFalse(isNotNullish, [null, undefined]);
   });
 });
