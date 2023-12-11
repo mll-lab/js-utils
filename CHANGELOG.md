@@ -1,3 +1,10 @@
+# [2.21.0](https://github.com/mll-lab/js-utils/compare/v2.20.1...v2.21.0) (2023-12-11)
+
+
+### Features
+
+* accept int in isOnlyDigits ([bf61bf5](https://github.com/mll-lab/js-utils/commit/bf61bf55f084a9fdce09bbe3300eca62e57f1783))
+
 ## [2.20.1](https://github.com/mll-lab/js-utils/compare/v2.20.0...v2.20.1) (2023-12-08)
 
 
