@@ -1,5 +1,5 @@
 import {
-  isLabId,
+  isLabID,
   isOnlyDigits,
   isRackBarcode,
   PredicateFn,
@@ -24,9 +24,9 @@ export function assertTrue(
 }
 
 describe('predicates', () => {
-  describe('isLabId', () => {
-    assertTrue(isLabId, ['17-123456']);
-    assertFalse(isLabId, ['asdf', '12345678', '123123123123']);
+  describe('isLabID', () => {
+    assertTrue(isLabID, ['17-123456']);
+    assertFalse(isLabID, ['asdf', '12345678', '123123123123']);
   });
 
   describe('isOnlyDigits', () => {
