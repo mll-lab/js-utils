@@ -1,3 +1,10 @@
+# [2.25.0](https://github.com/mll-lab/js-utils/compare/v2.24.0...v2.25.0) (2023-12-14)
+
+
+### Features
+
+* add isEmptyObject ([#31](https://github.com/mll-lab/js-utils/issues/31)) ([75e03f2](https://github.com/mll-lab/js-utils/commit/75e03f265e64086c1965ddb22ed447884f5755ea))
+
 # [2.24.0](https://github.com/mll-lab/js-utils/compare/v2.23.0...v2.24.0) (2023-12-14)
 
 
