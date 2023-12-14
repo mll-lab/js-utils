@@ -1,3 +1,10 @@
+# [2.24.0](https://github.com/mll-lab/js-utils/compare/v2.23.0...v2.24.0) (2023-12-14)
+
+
+### Features
+
+* add formatGermanFullDateTime ([#30](https://github.com/mll-lab/js-utils/issues/30)) ([eab243e](https://github.com/mll-lab/js-utils/commit/eab243ed4696a9eda75a8c3ae3a4071b2a73abc0))
+
 # [2.23.0](https://github.com/mll-lab/js-utils/compare/v2.22.0...v2.23.0) (2023-12-14)
 
 
