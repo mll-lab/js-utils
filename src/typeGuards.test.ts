@@ -1,5 +1,5 @@
 import { assertFalse, assertTrue } from './predicates.test';
-import { isArrayOfStrings, isNotNullish } from './typeGuards';
+import { isArrayOfStrings, isEmptyObject, isNotNullish } from './typeGuards';
 
 describe('typeGuards', () => {
   describe('isNotNullish', () => {
@@ -11,5 +11,10 @@ describe('typeGuards', () => {
     expect(isArrayOfStrings(['foo', 'bar'])).toBe(true);
     expect(isArrayOfStrings([])).toBe(true);
     assertFalse(isArrayOfStrings, [null, undefined, ['', null]]);
+  });
+
+  describe('emptyObject', () => {
+    assertTrue(isEmptyObject, [{}]);
+    assertFalse(isEmptyObject, [{ foo: 'bar' }, [], null, undefined, '']);
   });
 });
