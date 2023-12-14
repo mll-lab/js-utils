@@ -14,7 +14,7 @@ Shared JavaScript utilities of MLL
 Just import the functions you need and call them, for example:
 
 ```ts
-import { isLabId } from '@mll-lab/js-utils';
+import { isLabID } from '@mll-lab/js-utils';
 
-isLabId('obviously not');
+isLabID('obviously not');
 ```

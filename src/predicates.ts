@@ -29,9 +29,11 @@ export const isEmail: PredicateFn = function isEmail(value): value is string {
   return isString(value) && EMAIL_REGEX.test(value);
 };
 
-export const isLabId: PredicateFn = function isLabId(value): value is string {
+export const isLabID: PredicateFn = function isLabId(value): value is string {
   return isString(value) && /^\d{2}-\d{6}$/.test(value);
 };
+/** @deprecated use isLabID */
+export const isLabId = isLabID;
 
 export const isOnlyDigits: PredicateFn = function isOnlyDigits(
   value,
