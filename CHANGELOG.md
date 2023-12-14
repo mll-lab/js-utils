@@ -1,3 +1,10 @@
+# [2.23.0](https://github.com/mll-lab/js-utils/compare/v2.22.0...v2.23.0) (2023-12-14)
+
+
+### Features
+
+* add isArrayOfStrings ([8995824](https://github.com/mll-lab/js-utils/commit/8995824e52d6e495741db27286464d06321cafb0))
+
 # [2.22.0](https://github.com/mll-lab/js-utils/compare/v2.21.0...v2.22.0) (2023-12-14)
 
 
