@@ -1,3 +1,10 @@
+# [2.26.0](https://github.com/mll-lab/js-utils/compare/v2.25.0...v2.26.0) (2023-12-14)
+
+
+### Features
+
+* add math ([#32](https://github.com/mll-lab/js-utils/issues/32)) ([1872bd6](https://github.com/mll-lab/js-utils/commit/1872bd6e638a4307f74625f6bf51f1bb99d4348d))
+
 # [2.25.0](https://github.com/mll-lab/js-utils/compare/v2.24.0...v2.25.0) (2023-12-14)
 
 
