@@ -12,3 +12,11 @@ export function pick<T extends object, K extends keyof T>(
 ): Pick<T, K> {
   return lodashPick(object, props);
 }
+
+/**
+ * A singleton empty object.
+ *
+ * Can be used as a default or fallback while maintaining referential equality.
+ */
+export const EMPTY_OBJECT = {};
+Object.freeze(EMPTY_OBJECT);

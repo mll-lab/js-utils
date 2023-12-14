@@ -7,7 +7,7 @@ export * from './file';
 export * from './germanNumber';
 export * from './math';
 export * from './number';
-export * from './pick';
+export * from './object';
 export * from './pluralize';
 export * from './predicates';
 export * from './promise';
