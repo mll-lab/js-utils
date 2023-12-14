@@ -84,3 +84,7 @@ export function formatDotlessDate(date: Date | string | number): string {
 export function formatGermanTimeHourMinute(date: string): string {
   return format(date, 'HH:mm');
 }
+
+export function formatGermanFullDateTime(date: Date | string | number): string {
+  return format(date, 'dd.MM.yyyy HH:mm:ss');
+}

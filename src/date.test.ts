@@ -3,6 +3,7 @@ import { addDays, subDays } from 'date-fns';
 import {
   formatGerman,
   formatGermanDateTime,
+  formatGermanFullDateTime,
   isFuture,
   isToday,
   parseGermanDate,
@@ -74,5 +75,13 @@ describe('isFuture', () => {
     expect(isFuture(new Date())).toEqual(false);
     expect(isFuture(subDays(new Date(), 2))).toEqual(false);
     expect(isFuture(addDays(new Date(), 2))).toEqual(true);
+  });
+});
+
+describe('formatGermanFullDateTime', () => {
+  it('formats date with time and seconds', () => {
+    expect(formatGermanFullDateTime('2023-06-14 09:56:15')).toEqual(
+      '14.06.2023 09:56:15',
+    );
   });
 });
