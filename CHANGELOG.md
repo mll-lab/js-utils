@@ -1,3 +1,10 @@
+# [2.27.0](https://github.com/mll-lab/js-utils/compare/v2.26.0...v2.27.0) (2023-12-14)
+
+
+### Features
+
+* add EMPTY_OBJECT ([#33](https://github.com/mll-lab/js-utils/issues/33)) ([395f7aa](https://github.com/mll-lab/js-utils/commit/395f7aa534465da338eed0be1fa6c3819551fcef))
+
 # [2.26.0](https://github.com/mll-lab/js-utils/compare/v2.25.0...v2.26.0) (2023-12-14)
 
 
