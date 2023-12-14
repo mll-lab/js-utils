@@ -1,3 +1,10 @@
+# [2.22.0](https://github.com/mll-lab/js-utils/compare/v2.21.0...v2.22.0) (2023-12-14)
+
+
+### Features
+
+* add isLabID, deprecate isLabId ([2810ebf](https://github.com/mll-lab/js-utils/commit/2810ebf8cc2b3306531007d899a24cc648beaec8))
+
 # [2.21.0](https://github.com/mll-lab/js-utils/compare/v2.20.1...v2.21.0) (2023-12-11)
 
 
