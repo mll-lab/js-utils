@@ -8,7 +8,8 @@ describe('typeGuards', () => {
   });
 
   describe('isArrayOfStrings', () => {
-    assertTrue(isArrayOfStrings, [[], ['']]);
+    expect(isArrayOfStrings(['foo', 'bar'])).toBe(true);
+    expect(isArrayOfStrings([])).toBe(true);
     assertFalse(isArrayOfStrings, [null, undefined, ['', null]]);
   });
 });
