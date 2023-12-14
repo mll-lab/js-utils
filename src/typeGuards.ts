@@ -12,3 +12,12 @@ export function isArrayOfStrings(value: unknown): value is Array<string> {
     value.every((record) => typeof record === 'string')
   );
 }
+
+export function isEmptyObject(value: unknown): value is Record<string, never> {
+  return Boolean(
+    value &&
+      typeof value === 'object' &&
+      !(value instanceof Array) &&
+      Object.keys(value).length === 0,
+  );
+}
