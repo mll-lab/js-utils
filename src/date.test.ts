@@ -51,6 +51,7 @@ describe('parseGermanDateFlexible', () => {
 describe('formatGerman', () => {
   it('should format a date to german', () => {
     expect(formatGerman(new Date(2016, 2, 4))).toEqual('04.03.2016');
+    expect(formatGerman('1945-05-24')).toEqual('24.05.1945');
   });
 });
 

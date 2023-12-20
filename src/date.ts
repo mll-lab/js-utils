@@ -5,7 +5,7 @@ import {
   isValid,
   parse,
 } from 'date-fns';
-import de from 'date-fns/locale/de';
+import { de } from 'date-fns/locale/de';
 
 export function isToday(date: Date | string | number) {
   return differenceInCalendarDays(new Date(), date) === 0;
