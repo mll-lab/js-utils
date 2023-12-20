@@ -1,3 +1,10 @@
+## [2.27.1](https://github.com/mll-lab/js-utils/compare/v2.27.0...v2.27.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* update `date-fns` to fix date formatting ([5074273](https://github.com/mll-lab/js-utils/commit/50742738d642ef3974b3ec83204719257a712116))
+
 # [2.27.0](https://github.com/mll-lab/js-utils/compare/v2.26.0...v2.27.0) (2023-12-14)
 
 
