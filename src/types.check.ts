@@ -2,6 +2,7 @@ import {
   DeepPartial,
   Either,
   Exact,
+  KeyOfType,
   Maybe,
   MaybePromise,
   Modify,
@@ -38,6 +39,12 @@ export const modifiedType: Modify<Obj, { foo: number }> = {
 export function acceptsValueOf(v: ValueOf<Obj>): string | Bar {
   return v;
 }
+
+// KeyOfType
+type Foo = { a: number; b: string };
+export const correctNumberKey: KeyOfType<Foo, number> = 'a';
+// @ts-expect-error intentionally wrong
+export const wrongNumberKey: KeyOfType<Foo, number> = 'b';
 
 // Maybe
 export const maybeAllowsNull: Maybe<number> = null;
