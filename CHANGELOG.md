@@ -1,3 +1,10 @@
+# [2.28.0](https://github.com/mll-lab/js-utils/compare/v2.27.1...v2.28.0) (2024-01-02)
+
+
+### Features
+
+* add type KeyOfType ([69cb23e](https://github.com/mll-lab/js-utils/commit/69cb23ec1c3ec2fad3a7f63a8249655de317e9ed))
+
 ## [2.27.1](https://github.com/mll-lab/js-utils/compare/v2.27.0...v2.27.1) (2023-12-20)
 
 
