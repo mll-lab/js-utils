@@ -12,6 +12,15 @@ export type Modify<T, R> = Pick<T, Exclude<keyof T, keyof R>> & R;
 /** The missing counterpart to keyof. */
 export type ValueOf<T> = T[keyof T];
 
+/**
+ * Extracts keys of the given type TObject that are of type TKeys.
+ *
+ * https://stackoverflow.com/a/49752227
+ */
+export type KeyOfType<TObject, TKeys> = keyof {
+  [P in keyof TObject as TObject[P] extends TKeys ? P : never]: unknown;
+};
+
 /** Add null and undefined to a type. */
 export type Maybe<T> = T | null | undefined;
 
