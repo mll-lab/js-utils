@@ -15,20 +15,20 @@ export function isFuture(date: Date | string | number): boolean {
   return isAfter(date, new Date());
 }
 
-export function isValidGermanDate(date: Maybe<string>): boolean {
+export function isValidGermanDate(date: string): boolean {
   const regexGermanDateFormat = /^(\d{1,2}[.]\d{1,2}[.]\d{4})$/;
 
-  if (date?.match(regexGermanDateFormat)) {
+  if (date.match(regexGermanDateFormat)) {
     return true;
   }
 
   return false;
 }
 
-export function isValidTime(time: Maybe<string>): boolean {
+export function isValidTime(time: string): boolean {
   const regexTimeFormat = /^(\d{2}[:]\d{2})$/;
 
-  if (time?.match(regexTimeFormat)) {
+  if (time.match(regexTimeFormat)) {
     return true;
   }
 
