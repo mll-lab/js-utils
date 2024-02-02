@@ -63,6 +63,36 @@ describe('formatGermanDateTime', () => {
   });
 });
 
+describe('isValidGermanDate', () => {
+  it('should determine if a string matches the german date format dd.mm.yyyy', () => {
+    expect(isValidGermanDate('01.01.2000')).toEqual(true);
+    expect(isValidGermanDate('1.1.2000')).toEqual(true);
+    expect(isValidGermanDate('1.01.2000')).toEqual(true);
+    expect(isValidGermanDate('01.1.2000')).toEqual(true);
+    expect(isValidGermanDate('011.1.2000')).toEqual(false);
+    expect(isValidGermanDate('01.111.2000')).toEqual(false);
+    expect(isValidGermanDate('01.01.200')).toEqual(false);
+    expect(isValidGermanDate('xx.01.2000')).toEqual(false);
+    expect(isValidGermanDate('01.yy.2000')).toEqual(false);
+    expect(isValidGermanDate('01.01.zzzz')).toEqual(false);
+    expect(isValidGermanDate('')).toEqual(false);
+    expect(isValidGermanDate('..')).toEqual(false);
+    expect(isValidGermanDate('abc')).toEqual(false);
+  });
+});
+
+describe('isValidTime', () => {
+  it('should determine if a string matches the time format HH:mm', () => {
+    expect(isValidGermanDate('12:55')).toEqual(true);
+    expect(isValidGermanDate('1:55')).toEqual(false);
+    expect(isValidGermanDate('12:5')).toEqual(false);
+    expect(isValidGermanDate('')).toEqual(false);
+    expect(isValidGermanDate(':')).toEqual(false);
+    expect(isValidGermanDate('abc')).toEqual(false);
+  });
+});
+
+
 describe('isToday', () => {
   it('should determine if a date is today', () => {
     expect(isToday(new Date())).toEqual(true);
