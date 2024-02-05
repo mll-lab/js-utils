@@ -15,6 +15,14 @@ export function isFuture(date: Date | string | number): boolean {
   return isAfter(date, new Date());
 }
 
+export function isValidGermanDate(date: string): boolean {
+  return /^(\d{1,2}[.]\d{1,2}[.]\d{4})$/.test(date);
+}
+
+export function isTimeWithHoursAndMinutes(time: string): boolean {
+  return /^(\d{2}:\d{2})$/.test(time);
+}
+
 export function parseDate(value: string, formatString: string): Date | null {
   const parsedDate = parse(value, formatString, new Date());
 
