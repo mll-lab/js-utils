@@ -83,7 +83,7 @@ describe('isValidGermanDate', () => {
   });
 });
 
-describe('isValidTime', () => {
+describe('isTimeWithHoursAndMinutes', () => {
   it('determines if a string matches the time format HH:mm', () => {
     expect(isTimeWithHoursAndMinutes('12:55')).toEqual(true);
     expect(isTimeWithHoursAndMinutes('02:05')).toEqual(true);
