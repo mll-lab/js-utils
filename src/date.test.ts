@@ -6,6 +6,8 @@ import {
   formatGermanFullDateTime,
   isFuture,
   isToday,
+  isValidGermanDate,
+  isTimeWithHoursAndMinutes,
   parseGermanDate,
   parseGermanDateFlexible,
   parseIsoDate,
@@ -60,6 +62,36 @@ describe('formatGermanDateTime', () => {
     expect(formatGermanDateTime(new Date(2016, 2, 4, 11, 42, 59))).toEqual(
       '04.03.2016 11:42',
     );
+  });
+});
+
+describe('isValidGermanDate', () => {
+  it('determines if a string is a german date, day or month being one or two digits and year four digits, separated by dots', () => {
+    expect(isValidGermanDate('01.01.2000')).toEqual(true);
+    expect(isValidGermanDate('1.1.2000')).toEqual(true);
+    expect(isValidGermanDate('1.01.2000')).toEqual(true);
+    expect(isValidGermanDate('01.1.2000')).toEqual(true);
+    expect(isValidGermanDate('011.1.2000')).toEqual(false);
+    expect(isValidGermanDate('01.111.2000')).toEqual(false);
+    expect(isValidGermanDate('01.01.200')).toEqual(false);
+    expect(isValidGermanDate('xx.01.2000')).toEqual(false);
+    expect(isValidGermanDate('01.yy.2000')).toEqual(false);
+    expect(isValidGermanDate('01.01.zzzz')).toEqual(false);
+    expect(isValidGermanDate('')).toEqual(false);
+    expect(isValidGermanDate('..')).toEqual(false);
+    expect(isValidGermanDate('abc')).toEqual(false);
+  });
+});
+
+describe('isValidTime', () => {
+  it('determines if a string matches the time format HH:mm', () => {
+    expect(isTimeWithHoursAndMinutes('12:55')).toEqual(true);
+    expect(isTimeWithHoursAndMinutes('02:05')).toEqual(true);
+    expect(isTimeWithHoursAndMinutes('1:55')).toEqual(false);
+    expect(isTimeWithHoursAndMinutes('12:5')).toEqual(false);
+    expect(isTimeWithHoursAndMinutes('')).toEqual(false);
+    expect(isTimeWithHoursAndMinutes(':')).toEqual(false);
+    expect(isTimeWithHoursAndMinutes('abc')).toEqual(false);
   });
 });
 
