@@ -1,3 +1,10 @@
+# [2.29.0](https://github.com/mll-lab/js-utils/compare/v2.28.0...v2.29.0) (2024-02-05)
+
+
+### Features
+
+* add isValidGermanDate and isTimeWithHoursAndMinutes ([bf9a739](https://github.com/mll-lab/js-utils/commit/bf9a739dfdf2685f5a51ff6d20ca1b9f6e04cae4))
+
 # [2.28.0](https://github.com/mll-lab/js-utils/compare/v2.27.1...v2.28.0) (2024-01-02)
 
 
