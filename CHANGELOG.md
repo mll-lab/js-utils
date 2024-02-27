@@ -1,3 +1,10 @@
+# [2.30.0](https://github.com/mll-lab/js-utils/compare/v2.29.0...v2.30.0) (2024-02-27)
+
+
+### Features
+
+* add localeCompareStrings ([6eed158](https://github.com/mll-lab/js-utils/commit/6eed15809a157ad5b550f6bc4d1d21d1290e256f))
+
 # [2.29.0](https://github.com/mll-lab/js-utils/compare/v2.28.0...v2.29.0) (2024-02-05)
 
 
