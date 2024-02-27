@@ -1,11 +1,13 @@
 import { downloadBlob } from './file';
 
-describe('download', () => {
-  const documentIntial = new Blob(['foo']);
-  global.URL.createObjectURL = jest.fn();
+describe('downloadBlob', () => {
+  const blob = new Blob(['foo']);
+  const createObjectURL = jest.fn();
+  global.URL.createObjectURL = createObjectURL;
+
   it('createObjectURL should be called with content once', () => {
-    downloadBlob(documentIntial, 'test.csv');
-    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
-    expect(global.URL.createObjectURL).toHaveBeenCalledWith(documentIntial);
+    downloadBlob(blob, 'test.csv');
+    expect(createObjectURL).toHaveBeenCalledTimes(1);
+    expect(createObjectURL).toHaveBeenCalledWith(blob);
   });
 });

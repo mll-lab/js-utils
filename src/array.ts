@@ -94,7 +94,7 @@ export function sortByArray<T extends string | number>(
 
 /**
  * Takes a function that maps the values to sort and returns a compare function
- * using `String.prototype.localeCompare`, usable in `Array.sort` or similar APIs.
+ * using `String.prototype.localeCompare`, usable in `Array.toSorted` or similar APIs.
  *
  * null, undefined and the empty string are not distinguished and first in sort order.
  */
@@ -107,4 +107,14 @@ export function makeStringCompareFn<TSortable>(
 
     return mappedA.localeCompare(mappedB);
   };
+}
+
+/**
+ * Returns a compare function for values that are string, null or undefined,
+ * using `String.prototype.localeCompare`, usable in `Array.toSorted` or similar APIs.
+ *
+ * The empty string is first in sort order.
+ */
+export function localeCompareStrings(a: string, b: string): number {
+  return a.localeCompare(b);
 }

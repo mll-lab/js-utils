@@ -3,6 +3,7 @@ module.exports = {
   roots: ['src'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   testPathIgnorePatterns: ['node_modules/'],
+  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },

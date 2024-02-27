@@ -4,6 +4,7 @@ import {
   isEmptyArray,
   isNonEmptyArray,
   last,
+  localeCompareStrings,
   makeStringCompareFn,
   NonEmptyArray,
   sortByArray,
@@ -224,5 +225,12 @@ describe('makeStringCompareFn', () => {
       { key: 'b' },
       { key: 'c' },
     ]);
+  });
+});
+
+describe('localeCompareStrings', () => {
+  it('sorts strings', () => {
+    const original: Array<string> = ['c', '', 'a', 'b'];
+    expect(original.sort(localeCompareStrings)).toEqual(['', 'a', 'b', 'c']);
   });
 });
