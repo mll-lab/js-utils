@@ -1,3 +1,10 @@
+# [2.31.0](https://github.com/mll-lab/js-utils/compare/v2.30.0...v2.31.0) (2024-04-22)
+
+
+### Features
+
+* add isNonEmptyString ([406c08f](https://github.com/mll-lab/js-utils/commit/406c08f26d6012f55c575d00094b4d40a8931bf4))
+
 # [2.30.0](https://github.com/mll-lab/js-utils/compare/v2.29.0...v2.30.0) (2024-02-27)
 
 
