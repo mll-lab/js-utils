@@ -1,5 +1,6 @@
 import {
-  containSameValues, firstIfSingle,
+  containSameValues,
+  firstIfSingle,
   insertIf,
   isEmptyArray,
   isNonEmptyArray,
@@ -10,7 +11,7 @@ import {
   sortByArray,
   toggleElement,
   withoutIndex,
-} from "./array";
+} from './array';
 import { Maybe } from './types';
 
 describe('NonEmptyArray', () => {
