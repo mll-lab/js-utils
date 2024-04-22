@@ -237,19 +237,16 @@ describe('localeCompareStrings', () => {
 });
 
 describe('firstIfSingle', () => {
-  it('returns null for empty arrays', () => {
-    expect(firstIfSingle([])).toEqual(null);
-  });
-
-  it('returns single element of an array', () => {
-    expect(firstIfSingle([1])).toEqual(1);
-  });
-
-  it('returns null for arrays with multiple elements', () => {
-    expect(firstIfSingle([1, 2])).toEqual(null);
-  });
-
-  it('returns first element for arrays with multiple elements if the first element is null', () => {
-    expect(firstIfSingle([null, 2])).toEqual(null);
-  });
+  it.each([
+    [[], null],
+    [[1], 1],
+    [[null, 2], null],
+    [[null], null],
+    [[undefined], undefined],
+  ])(
+    'returns first element of an array if the array has only one item',
+    (input, expectedResult) => {
+      expect(firstIfSingle(input)).toEqual(expectedResult);
+    },
+  );
 });
