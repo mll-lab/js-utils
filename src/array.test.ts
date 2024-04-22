@@ -1,5 +1,5 @@
 import {
-  containSameValues,
+  containSameValues, firstIfSingle,
   insertIf,
   isEmptyArray,
   isNonEmptyArray,
@@ -10,7 +10,7 @@ import {
   sortByArray,
   toggleElement,
   withoutIndex,
-} from './array';
+} from "./array";
 import { Maybe } from './types';
 
 describe('NonEmptyArray', () => {
@@ -232,5 +232,23 @@ describe('localeCompareStrings', () => {
   it('sorts strings', () => {
     const original: Array<string> = ['c', '', 'a', 'b'];
     expect(original.sort(localeCompareStrings)).toEqual(['', 'a', 'b', 'c']);
+  });
+});
+
+describe('firstIfSingle', () => {
+  it('returns null for empty arrays', () => {
+    expect(firstIfSingle([])).toEqual(null);
+  });
+
+  it('returns single element of an array', () => {
+    expect(firstIfSingle([1])).toEqual(1);
+  });
+
+  it('returns null for arrays with multiple elements', () => {
+    expect(firstIfSingle([1, 2])).toEqual(null);
+  });
+
+  it('returns first element for arrays with multiple elements if the first element is null', () => {
+    expect(firstIfSingle([null, 2])).toEqual(null);
   });
 });

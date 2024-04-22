@@ -118,3 +118,13 @@ export function makeStringCompareFn<TSortable>(
 export function localeCompareStrings(a: string, b: string): number {
   return a.localeCompare(b);
 }
+
+/**
+ * Select first element of an array if it contains exactly one element, else return null.
+ */
+export function firstIfSingle<T>(array: Maybe<Array<T>>): T | null {
+  if (!array || array.length !== 1) {
+    return null;
+  }
+  return array[0];
+}
