@@ -2,10 +2,13 @@ import {
   differenceInCalendarDays,
   format,
   isAfter,
+  isMatch,
   isValid,
   parse,
 } from 'date-fns';
 import { de } from 'date-fns/locale/de';
+
+import { Maybe } from './types';
 
 export function isToday(date: Date | string | number) {
   return differenceInCalendarDays(new Date(), date) === 0;
@@ -95,4 +98,17 @@ export function formatGermanTimeHourMinute(date: string): string {
 
 export function formatGermanFullDateTime(date: Date | string | number): string {
   return format(date, 'dd.MM.yyyy HH:mm:ss');
+}
+
+/** Does the given date match the given dateFormat? */
+export function dateMatchesFormat(
+  date: Maybe<string>,
+  /** @see https://date-fns.org/v3.6.0/docs/isMatch for allowed formats. */
+  dateFormat: string,
+): boolean {
+  if (!date) {
+    return false;
+  }
+
+  return isMatch(date, dateFormat);
 }

@@ -11,6 +11,7 @@ import {
   parseGermanDate,
   parseGermanDateFlexible,
   parseIsoDate,
+  dateMatchesFormat,
 } from './date';
 
 describe('parseIsoDate', () => {
@@ -116,5 +117,32 @@ describe('formatGermanFullDateTime', () => {
     expect(formatGermanFullDateTime('2023-06-14 09:56:15')).toEqual(
       '14.06.2023 09:56:15',
     );
+  });
+});
+
+describe('dateMatchesFormat', () => {
+  const DATE_FORMAT = 'yyyyMMdd';
+
+  it('recognizes valid dates', () => {
+    expect(dateMatchesFormat('20240101', DATE_FORMAT)).toBe(true);
+    expect(dateMatchesFormat('20241222', DATE_FORMAT)).toBe(true);
+    expect(dateMatchesFormat('99990710', DATE_FORMAT)).toBe(true);
+    expect(dateMatchesFormat('00010101', DATE_FORMAT)).toBe(true);
+  });
+
+  it('rejects invalid dates', () => {
+    expect(dateMatchesFormat('202410101', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('202411', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20241', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20240001', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20241301', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20241200', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20241233', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('0', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('xy20201201', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('20201201xy', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('xy', DATE_FORMAT)).toBe(false);
+    expect(dateMatchesFormat('', DATE_FORMAT)).toBe(false);
   });
 });
