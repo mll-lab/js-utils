@@ -1,6 +1,6 @@
 import {
   containSameValues,
-  firstIfSingle,
+  soleItem,
   insertIf,
   isEmptyArray,
   isNonEmptyArray,
@@ -236,7 +236,7 @@ describe('localeCompareStrings', () => {
   });
 });
 
-describe('firstIfSingle', () => {
+describe('soleItem', () => {
   it.each([
     [[], null],
     [[1], 1],
@@ -246,7 +246,7 @@ describe('firstIfSingle', () => {
   ])(
     'returns first element of an array if the array has only one item',
     (input, expectedResult) => {
-      expect(firstIfSingle(input)).toEqual(expectedResult);
+      expect(soleItem(input)).toEqual(expectedResult);
     },
   );
 });
