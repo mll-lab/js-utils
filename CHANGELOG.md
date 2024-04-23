@@ -1,3 +1,10 @@
+# [2.32.0](https://github.com/mll-lab/js-utils/compare/v2.31.0...v2.32.0) (2024-04-23)
+
+
+### Features
+
+* add soleItem ([585596a](https://github.com/mll-lab/js-utils/commit/585596a2ae561fe704bcc56fd0a3ab5c9eabc41b))
+
 # [2.31.0](https://github.com/mll-lab/js-utils/compare/v2.30.0...v2.31.0) (2024-04-22)
 
 
