@@ -1,5 +1,6 @@
 import {
   containSameValues,
+  soleItem,
   insertIf,
   isEmptyArray,
   isNonEmptyArray,
@@ -233,4 +234,19 @@ describe('localeCompareStrings', () => {
     const original: Array<string> = ['c', '', 'a', 'b'];
     expect(original.sort(localeCompareStrings)).toEqual(['', 'a', 'b', 'c']);
   });
+});
+
+describe('soleItem', () => {
+  it.each([
+    [[], null],
+    [[1], 1],
+    [[null, 2], null],
+    [[null], null],
+    [[undefined], undefined],
+  ])(
+    'returns first element of an array if the array has only one item',
+    (input, expectedResult) => {
+      expect(soleItem(input)).toEqual(expectedResult);
+    },
+  );
 });

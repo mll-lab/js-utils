@@ -118,3 +118,11 @@ export function makeStringCompareFn<TSortable>(
 export function localeCompareStrings(a: string, b: string): number {
   return a.localeCompare(b);
 }
+
+/** If the given array contains exactly one item, return that, otherwise null. */
+export function soleItem<T>(array: Maybe<Array<T>>): T | null {
+  if (!array || array.length !== 1) {
+    return null;
+  }
+  return array[0];
+}
