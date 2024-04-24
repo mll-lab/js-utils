@@ -1,3 +1,10 @@
+# [2.33.0](https://github.com/mll-lab/js-utils/compare/v2.32.0...v2.33.0) (2024-04-24)
+
+
+### Features
+
+* add dateMatchesFormat ([dfaf812](https://github.com/mll-lab/js-utils/commit/dfaf812bb1eb368f9db67df6b0eb5782dbbba69e))
+
 # [2.32.0](https://github.com/mll-lab/js-utils/compare/v2.31.0...v2.32.0) (2024-04-23)
 
 
