@@ -11,6 +11,7 @@ import {
   sortByArray,
   toggleElement,
   withoutIndex,
+  makeNumberCompareFn,
 } from './array';
 import { Maybe } from './types';
 
@@ -225,6 +226,33 @@ describe('makeStringCompareFn', () => {
       { key: 'a' },
       { key: 'b' },
       { key: 'c' },
+    ]);
+  });
+});
+
+describe('makeNumberCompareFn', () => {
+  it('creates a compare function that sorts numbers', () => {
+    type MaybeKeyNumber = { key?: Maybe<number> };
+    const compareFn = makeNumberCompareFn<MaybeKeyNumber>(
+      (record) => record.key,
+    );
+    const original: Array<MaybeKeyNumber> = [
+      { key: 3 },
+      { key: 0 },
+      { key: undefined },
+      { key: 1 },
+      { key: null },
+      { key: 2 },
+      {},
+    ];
+    expect(original.sort(compareFn)).toEqual([
+      { key: 0 },
+      { key: undefined },
+      { key: null },
+      {},
+      { key: 1 },
+      { key: 2 },
+      { key: 3 },
     ]);
   });
 });
