@@ -93,7 +93,7 @@ export function sortByArray<T extends string | number>(
 }
 
 /**
- * Takes a function that maps the values to sort and returns a compare function
+ * Takes a function that maps the values to sort to strings and returns a compare function
  * using `String.prototype.localeCompare`, usable in `Array.toSorted` or similar APIs.
  *
  * null, undefined and the empty string are not distinguished and first in sort order.
@@ -106,6 +106,24 @@ export function makeStringCompareFn<TSortable>(
     const mappedB = map(b) ?? '';
 
     return mappedA.localeCompare(mappedB);
+  };
+}
+
+/**
+ * Takes a function that maps the values to sort to numbers and returns a compare function
+ * using subtraction, usable in `Array.toSorted` or similar APIs.
+ *
+ * null and undefined are coalesced to `fallbackValue`, by default 0, and thus not distinguished and first in sort order.
+ */
+export function makeNumberCompareFn<TSortable>(
+  map: (sortable: TSortable) => Maybe<number>,
+  fallbackValue: number = 0,
+): (a: TSortable, b: TSortable) => number {
+  return (a, b) => {
+    const mappedA = map(a) ?? fallbackValue;
+    const mappedB = map(b) ?? fallbackValue;
+
+    return mappedA - mappedB;
   };
 }
 
