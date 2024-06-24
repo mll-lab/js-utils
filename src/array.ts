@@ -113,14 +113,15 @@ export function makeStringCompareFn<TSortable>(
  * Takes a function that maps the values to sort to numbers and returns a compare function
  * using subtraction, usable in `Array.toSorted` or similar APIs.
  *
- * null, undefined and 0 are not distinguished and first in sort order.
+ * null and undefined are coalesced to `fallbackValue`, by default 0, and thus not distinguished and first in sort order.
  */
 export function makeNumberCompareFn<TSortable>(
   map: (sortable: TSortable) => Maybe<number>,
+  fallbackValue: number = 0,
 ): (a: TSortable, b: TSortable) => number {
   return (a, b) => {
-    const mappedA = map(a) ?? 0;
-    const mappedB = map(b) ?? 0;
+    const mappedA = map(a) ?? fallbackValue;
+    const mappedB = map(b) ?? fallbackValue;
 
     return mappedA - mappedB;
   };

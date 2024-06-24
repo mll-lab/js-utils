@@ -231,8 +231,9 @@ describe('makeStringCompareFn', () => {
 });
 
 describe('makeNumberCompareFn', () => {
+  type MaybeKeyNumber = { key?: Maybe<number> };
+
   it('creates a compare function that sorts numbers', () => {
-    type MaybeKeyNumber = { key?: Maybe<number> };
     const compareFn = makeNumberCompareFn<MaybeKeyNumber>(
       (record) => record.key,
     );
@@ -253,6 +254,31 @@ describe('makeNumberCompareFn', () => {
       { key: 1 },
       { key: 2 },
       { key: 3 },
+    ]);
+  });
+
+  it('accepts different fallback values', () => {
+    const compareFn = makeNumberCompareFn<MaybeKeyNumber>(
+      (record) => record.key,
+      9001,
+    );
+    const original: Array<MaybeKeyNumber> = [
+      { key: 3 },
+      { key: 0 },
+      { key: undefined },
+      { key: 1 },
+      { key: null },
+      { key: 2 },
+      {},
+    ];
+    expect(original.sort(compareFn)).toEqual([
+      { key: 0 },
+      { key: 1 },
+      { key: 2 },
+      { key: 3 },
+      { key: undefined },
+      { key: null },
+      {},
     ]);
   });
 });
