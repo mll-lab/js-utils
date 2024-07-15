@@ -5,12 +5,19 @@ import {
   isNonEmptyString,
   isNotNullish,
   isString,
+  isTruthy,
 } from './typeGuards';
 
 describe('typeGuards', () => {
-  describe('isString', () => {
-    assertTrue(isString, ['foo', '1', 'true', '']);
-    assertFalse(isString, [/foo/, 1, true, null, undefined]);
+  describe('isArrayOfStrings', () => {
+    expect(isArrayOfStrings(['foo', 'bar'])).toBe(true);
+    expect(isArrayOfStrings([])).toBe(true);
+    assertFalse(isArrayOfStrings, [null, undefined, ['', null]]);
+  });
+
+  describe('isEmptyObject', () => {
+    assertTrue(isEmptyObject, [{}]);
+    assertFalse(isEmptyObject, [{ foo: 'bar' }, [], null, undefined, '']);
   });
 
   describe('isNonEmptyString', () => {
@@ -23,14 +30,13 @@ describe('typeGuards', () => {
     assertFalse(isNotNullish, [null, undefined]);
   });
 
-  describe('isArrayOfStrings', () => {
-    expect(isArrayOfStrings(['foo', 'bar'])).toBe(true);
-    expect(isArrayOfStrings([])).toBe(true);
-    assertFalse(isArrayOfStrings, [null, undefined, ['', null]]);
+  describe('isString', () => {
+    assertTrue(isString, ['foo', '1', 'true', '']);
+    assertFalse(isString, [/foo/, 1, true, null, undefined]);
   });
 
-  describe('emptyObject', () => {
-    assertTrue(isEmptyObject, [{}]);
-    assertFalse(isEmptyObject, [{ foo: 'bar' }, [], null, undefined, '']);
+  describe('isTruthy', () => {
+    assertTrue(isTruthy, [true, 1, -1, ' ', '0', 'false', [], {}]);
+    assertFalse(isTruthy, [null, undefined, false, 0, -0, '', document.all]);
   });
 });
