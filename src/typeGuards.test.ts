@@ -36,7 +36,27 @@ describe('typeGuards', () => {
   });
 
   describe('isTruthy', () => {
-    assertTrue(isTruthy, [true, 1, -1, ' ', '0', 'false', [], {}]);
-    assertFalse(isTruthy, [null, undefined, false, 0, -0, '', document.all]);
+    assertTrue(isTruthy, [
+      true,
+      1,
+      -1,
+      Infinity,
+      ' ',
+      '0',
+      'false',
+      [],
+      {},
+      document,
+    ]);
+    assertFalse(isTruthy, [
+      null,
+      undefined,
+      false,
+      0,
+      -0,
+      NaN,
+      '',
+      document.all,
+    ]);
   });
 });
