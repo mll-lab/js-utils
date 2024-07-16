@@ -1,3 +1,10 @@
+# [2.35.0](https://github.com/mll-lab/js-utils/compare/v2.34.0...v2.35.0) (2024-07-16)
+
+
+### Features
+
+* add type guard `isTruthy` ([bb44657](https://github.com/mll-lab/js-utils/commit/bb44657bc7f52a48b74caf138ba83aa112a95c5d))
+
 # [2.34.0](https://github.com/mll-lab/js-utils/compare/v2.33.0...v2.34.0) (2024-06-24)
 
 
