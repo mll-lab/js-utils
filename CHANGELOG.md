@@ -1,3 +1,10 @@
+## [2.36.1](https://github.com/mll-lab/js-utils/compare/v2.36.0...v2.36.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* export stringToHslaColor ([e52bba1](https://github.com/mll-lab/js-utils/commit/e52bba1bb46ecd87f5a84d6a00627b36522d2fa8))
+
 # [2.36.0](https://github.com/mll-lab/js-utils/compare/v2.35.0...v2.36.0) (2024-08-20)
 
 
