@@ -12,6 +12,7 @@ export * from './pluralize';
 export * from './predicates';
 export * from './promise';
 export * from './string';
+export * from './stringToColor';
 export * from './style';
 export * from './typeGuards';
 export * from './types';
