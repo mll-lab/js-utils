@@ -1,3 +1,10 @@
+# [2.36.0](https://github.com/mll-lab/js-utils/compare/v2.35.0...v2.36.0) (2024-08-20)
+
+
+### Features
+
+* add stringToHslaColor ([db3d318](https://github.com/mll-lab/js-utils/commit/db3d318e256daa3de9a123159da09697a896ac34))
+
 # [2.35.0](https://github.com/mll-lab/js-utils/compare/v2.34.0...v2.35.0) (2024-07-16)
 
 
