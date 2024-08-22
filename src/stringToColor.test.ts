@@ -1,6 +1,6 @@
 import { uniq } from 'lodash';
 
-import { randomString, stringToHslaColor } from './stringToColor';
+import { stringToHslaColor } from './stringToColor';
 
 describe('stringToHslaColor', () => {
   it.each(['test', 'test'])(
@@ -12,11 +12,17 @@ describe('stringToHslaColor', () => {
     },
   );
 
+  it('allows setting the opacity', () => {
+    expect(stringToHslaColor('test', { opacity: 1.23 })).toStrictEqual(
+      'hsla(58, 98%, 48%, 1.23)',
+    );
+  });
+
   it('returns various hsla colors for various inputs', () => {
     const testStrings = ['t', 'te', 'tes', 'test'];
-    expect(uniq(testStrings.map(stringToHslaColor)).length).toBe(
-      testStrings.length,
-    );
+    expect(
+      uniq(testStrings.map((string) => stringToHslaColor(string))).length,
+    ).toBe(testStrings.length);
   });
 
   it('returns a valid color for a random string', () => {
@@ -31,4 +37,15 @@ function isValidColor(color: string): boolean {
   element.style.borderColor = color;
 
   return element.style.borderColor.length !== 0;
+}
+
+/** Generates a random string with a length of 1-11 chars. */
+function randomString(): string {
+  // Cut off the constant 0. from the beginning
+  const fractionStart = 2;
+
+  // Unequal distribution at the edges, but sufficiently random for the purposes of this function
+  const randomLengthEnd = Math.round(Math.random() * 11) + 3;
+
+  return Math.random().toString(36).substring(fractionStart, randomLengthEnd);
 }
