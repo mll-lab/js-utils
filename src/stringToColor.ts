@@ -9,12 +9,14 @@ function hashCode(string: string): number {
   return hash;
 }
 
-function getHslColor(hash: number): string {
+function hashToHslaColor(hash: number, opacity: number): string {
   const h = range(hash, 0, 360);
   const s = range(hash, 50, 100);
   const l = range(hash, 20, 50);
+  const a = opacity.toString();
 
-  return `hsla(${h}, ${s}%, ${l}%, 1)`;
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl#values
+  return `hsla(${h}, ${s}%, ${l}%, ${a})`;
 }
 
 function range(hash: number, min: number, max: number): number {
@@ -24,19 +26,22 @@ function range(hash: number, min: number, max: number): number {
   return x + min;
 }
 
-export function stringToHslaColor(string: string): string {
-  return getHslColor(hashCode(string));
-}
+export type StringToHslaColorOptions = { opacity?: number };
 
 /**
- * Generates a random string with a length of 1-11 chars.
+ * Provides a hsla color value for use in CSS, based on the contents of the given string.
+ *
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl.
+ *
+ * @example stringToHslaColor('test') becomes 'hsla(58, 98%, 48%, 1)' (yellow)
+ *
+ * This function tries to provide a good spread of colors for different inputs.
+ * However, it does not guarantee uniqueness - think of it like hashing.
+ * It is pure, meaning that the result is only dependent on the inputs.
  */
-export function randomString(): string {
-  // Cut off the constant 0. from the beginning
-  const fractionStart = 2;
-
-  // Unequal distribution at the edges, but sufficiently random for the purposes of this function
-  const randomLengthEnd = Math.round(Math.random() * 11) + 3;
-
-  return Math.random().toString(36).substring(fractionStart, randomLengthEnd);
+export function stringToHslaColor(
+  string: string,
+  { opacity = 1 }: StringToHslaColorOptions = {},
+): string {
+  return hashToHslaColor(hashCode(string), opacity);
 }
