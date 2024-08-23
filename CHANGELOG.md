@@ -1,3 +1,10 @@
+# [2.37.0](https://github.com/mll-lab/js-utils/compare/v2.36.1...v2.37.0) (2024-08-23)
+
+
+### Features
+
+* allow controlling opacity in `stringToHslaColor` ([fc36880](https://github.com/mll-lab/js-utils/commit/fc368803004ec815e3a058f71c9bb02b17442cb8))
+
 ## [2.36.1](https://github.com/mll-lab/js-utils/compare/v2.36.0...v2.36.1) (2024-08-20)
 
 
