@@ -128,6 +128,21 @@ export function makeNumberCompareFn<TSortable>(
 }
 
 /**
+ * Takes a function that maps the values to sort to booleans and returns a compare function that puts `false` before `true`.
+ * Usable in `Array.toSorted` or similar APIs.
+ */
+export function makeBooleanCompareFn<TSortable>(
+  map: (sortable: TSortable) => boolean,
+): (a: TSortable, b: TSortable) => number {
+  return (a, b) => {
+    const mappedA = map(a);
+    const mappedB = map(b);
+
+    return Number(mappedA) - Number(mappedB);
+  };
+}
+
+/**
  * Returns a compare function for values that are string, null or undefined,
  * using `String.prototype.localeCompare`, usable in `Array.toSorted` or similar APIs.
  *
