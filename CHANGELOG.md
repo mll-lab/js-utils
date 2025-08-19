@@ -1,3 +1,10 @@
+# [2.40.0](https://github.com/mll-lab/js-utils/compare/v2.39.0...v2.40.0) (2025-08-19)
+
+
+### Features
+
+* add argument `fallbackValue` to `makeDateCompareFn` ([161b9df](https://github.com/mll-lab/js-utils/commit/161b9df0bc9814ca272c06da79fc8fa8d64f0e44))
+
 # [2.39.0](https://github.com/mll-lab/js-utils/compare/v2.38.0...v2.39.0) (2025-08-19)
 
 
