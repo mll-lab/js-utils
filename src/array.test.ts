@@ -12,6 +12,7 @@ import {
   toggleElement,
   withoutIndex,
   makeNumberCompareFn,
+  makeBooleanCompareFn,
   makeDateCompareFn,
 } from './array';
 import { Maybe } from './types';
@@ -281,6 +282,16 @@ describe('makeNumberCompareFn', () => {
       { key: null },
       {},
     ]);
+  });
+});
+
+describe('makeBooleanCompareFn', () => {
+  type KeyBoolean = { key: boolean };
+
+  it('creates a compare function that sorts booleans', () => {
+    const compareFn = makeBooleanCompareFn<KeyBoolean>((record) => record.key);
+    const original: Array<KeyBoolean> = [{ key: true }, { key: false }];
+    expect(original.sort(compareFn)).toEqual([{ key: false }, { key: true }]);
   });
 });
 
