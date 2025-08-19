@@ -12,6 +12,7 @@ import {
   toggleElement,
   withoutIndex,
   makeNumberCompareFn,
+  makeDateCompareFn,
 } from './array';
 import { Maybe } from './types';
 
@@ -280,6 +281,28 @@ describe('makeNumberCompareFn', () => {
       { key: null },
       {},
     ]);
+  });
+});
+
+describe('makeDateCompareFn', () => {
+  it('sorts objects by date property', () => {
+    const arr = [
+      { name: 'b', date: new Date('2022-01-02') },
+      { name: 'a', date: new Date('2022-01-01') },
+      { name: 'c', date: new Date('2022-01-03') },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date));
+    expect(sorted.map((x) => x.name)).toEqual(['a', 'b', 'c']);
+  });
+
+  it('handles null/undefined dates', () => {
+    const arr = [
+      { name: 'a', date: undefined },
+      { name: 'b', date: new Date('2022-01-01') },
+      { name: 'c', date: null },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date));
+    expect(sorted.map((x) => x.name)).toEqual(['a', 'c', 'b']);
   });
 });
 
