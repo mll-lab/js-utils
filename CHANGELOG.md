@@ -1,3 +1,10 @@
+# [2.39.0](https://github.com/mll-lab/js-utils/compare/v2.38.0...v2.39.0) (2025-08-19)
+
+
+### Features
+
+* add `makeDateCompareFn` ([1f07330](https://github.com/mll-lab/js-utils/commit/1f073308330e45631374c1e3117f7b34304b9292))
+
 # [2.38.0](https://github.com/mll-lab/js-utils/compare/v2.37.0...v2.38.0) (2025-08-19)
 
 
