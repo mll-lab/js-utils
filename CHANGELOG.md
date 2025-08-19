@@ -1,3 +1,10 @@
+# [2.38.0](https://github.com/mll-lab/js-utils/compare/v2.37.0...v2.38.0) (2025-08-19)
+
+
+### Features
+
+* add `makeBooleanCompareFn` ([d55aab4](https://github.com/mll-lab/js-utils/commit/d55aab4d8e3789053c3596ff55723de4ae893397))
+
 # [2.37.0](https://github.com/mll-lab/js-utils/compare/v2.36.1...v2.37.0) (2024-08-23)
 
 
