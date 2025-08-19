@@ -143,6 +143,18 @@ export function makeBooleanCompareFn<TSortable>(
 }
 
 /**
+ * Takes a function that maps the values to sort to Dates and returns a compare function
+ * using their timestamps, usable in `Array.toSorted` or similar APIs.
+ *
+ * null and undefined are coalesced to 0 and thus not distinguished and first in sort order.
+ */
+export function makeDateCompareFn<TSortable>(
+  map: (sortable: TSortable) => Maybe<Date>,
+): (a: TSortable, b: TSortable) => number {
+  return makeNumberCompareFn((sortable) => map(sortable)?.getTime());
+}
+
+/**
  * Returns a compare function for values that are string, null or undefined,
  * using `String.prototype.localeCompare`, usable in `Array.toSorted` or similar APIs.
  *
