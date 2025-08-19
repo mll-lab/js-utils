@@ -315,6 +315,56 @@ describe('makeDateCompareFn', () => {
     const sorted = arr.sort(makeDateCompareFn((x) => x.date));
     expect(sorted.map((x) => x.name)).toEqual(['a', 'c', 'b']);
   });
+
+  it('uses custom fallback value for null/undefined dates', () => {
+    const fallbackDate = new Date('2022-01-02');
+    const arr = [
+      { name: 'a', date: undefined },
+      { name: 'b', date: new Date('2022-01-01') },
+      { name: 'c', date: new Date('2022-01-03') },
+      { name: 'd', date: null },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date, fallbackDate));
+    // With fallback of 2022-01-02, null/undefined should sort between b and c
+    expect(sorted.map((x) => x.name)).toEqual(['b', 'a', 'd', 'c']);
+  });
+
+  it('uses fallback value when all dates are null/undefined', () => {
+    const fallbackDate = new Date('2022-01-01');
+    const arr = [
+      { name: 'a', date: null },
+      { name: 'b', date: undefined },
+      { name: 'c', date: null },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date, fallbackDate));
+    // All should be considered equal with the same fallback value
+    // Original order should be preserved (stable sort)
+    expect(sorted.map((x) => x.name)).toEqual(['a', 'b', 'c']);
+  });
+
+  it('fallback value works with future dates', () => {
+    const fallbackDate = new Date('2025-01-01');
+    const arr = [
+      { name: 'a', date: new Date('2022-01-01') },
+      { name: 'b', date: undefined },
+      { name: 'c', date: new Date('2023-01-01') },
+      { name: 'd', date: null },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date, fallbackDate));
+    // null/undefined should sort last with future fallback date
+    expect(sorted.map((x) => x.name)).toEqual(['a', 'c', 'b', 'd']);
+  });
+
+  it('default fallback value is very old', () => {
+    const arr = [
+      { name: 'a', date: new Date('1912-01-01') },
+      { name: 'b', date: undefined },
+      { name: 'c', date: new Date('2022-01-01') },
+      { name: 'd', date: null },
+    ];
+    const sorted = arr.sort(makeDateCompareFn((x) => x.date));
+    expect(sorted.map((x) => x.name)).toEqual(['b', 'd', 'a', 'c']);
+  });
 });
 
 describe('localeCompareStrings', () => {
