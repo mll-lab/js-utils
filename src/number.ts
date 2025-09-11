@@ -24,27 +24,23 @@ export function firstDecimalDigit(number: number): number {
 }
 
 export function formatDecimal(
-    value: number,
-    options: {
-        maxDecimals: number;
-        minDecimals: number;
-        trimTrailingZeros: boolean;
-    }
+  value: number,
+  options: {
+    maxDecimals: number;
+    minDecimals: number;
+    trimTrailingZeros: boolean;
+  },
 ): string {
-    const {
-        maxDecimals,
-        minDecimals,
-        trimTrailingZeros,
-    } = options;
+  const { maxDecimals, minDecimals, trimTrailingZeros } = options;
 
-    const factor = Math.pow(10, maxDecimals);
-    const rounded = Math.round(value * factor) / factor;
+  const factor = 10 ** maxDecimals;
+  const rounded = Math.round(value * factor) / factor;
 
-    let str = rounded.toFixed(Math.max(minDecimals, maxDecimals));
+  let str = rounded.toFixed(Math.max(minDecimals, maxDecimals));
 
-    if (trimTrailingZeros) {
-        str = str.replace(/(\.[0-9]*?)0+$/, '$1').replace(/\.$/, '');
-    }
+  if (trimTrailingZeros) {
+    str = str.replace(/(\.[0-9]*?)0+$/, '$1').replace(/\.$/, '');
+  }
 
-    return str;
+  return str;
 }
