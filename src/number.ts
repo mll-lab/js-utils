@@ -22,3 +22,29 @@ export function firstDecimalDigit(number: number): number {
 
   return Number(regExpMatchArray[1]);
 }
+
+export function formatDecimal(
+    value: number,
+    options: {
+        maxDecimals: number;
+        minDecimals: number;
+        trimTrailingZeros: boolean;
+    }
+): string {
+    const {
+        maxDecimals,
+        minDecimals,
+        trimTrailingZeros,
+    } = options;
+
+    const factor = Math.pow(10, maxDecimals);
+    const rounded = Math.round(value * factor) / factor;
+
+    let str = rounded.toFixed(Math.max(minDecimals, maxDecimals));
+
+    if (trimTrailingZeros) {
+        str = str.replace(/(\.[0-9]*?)0+$/, '$1').replace(/\.$/, '');
+    }
+
+    return str;
+}

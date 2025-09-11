@@ -1,4 +1,4 @@
-import { firstDecimalDigit, round } from './number';
+import {firstDecimalDigit, formatDecimal, round} from './number';
 
 describe('round', () => {
   it.each([
@@ -25,4 +25,22 @@ describe('firstDecimalDigit', () => {
   ])('returns the decimal digit of a number', (number, expectedResult) => {
     expect(firstDecimalDigit(number)).toEqual(expectedResult);
   });
+});
+
+
+describe('formatDecimal', () => {
+    it.each([
+        [1.2345, { maxDecimals: 2, minDecimals: 1, trimTrailingZeros: true }, '1.23'],
+        [1.2,    { maxDecimals: 3, minDecimals: 3, trimTrailingZeros: false }, '1.200'],
+        [1.2345, { maxDecimals: 4, minDecimals: 2, trimTrailingZeros: false }, '1.2345'],
+        [1.2000, { maxDecimals: 4, minDecimals: 2, trimTrailingZeros: true }, '1.2'],
+        [1,      { maxDecimals: 2, minDecimals: 2, trimTrailingZeros: false }, '1.00'],
+        [-1.234, { maxDecimals: 2, minDecimals: 0, trimTrailingZeros: true }, '-1.23'],
+        [0,      { maxDecimals: 3, minDecimals: 0, trimTrailingZeros: true }, '0'],
+    ])(
+        'formatDecimal(%p, %p) → %p',
+        (value, options, expected) => {
+            expect(formatDecimal(value, options)).toEqual(expected);
+        },
+    );
 });
