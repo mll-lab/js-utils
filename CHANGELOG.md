@@ -1,3 +1,10 @@
+# [2.41.0](https://github.com/mll-lab/js-utils/compare/v2.40.0...v2.41.0) (2025-11-03)
+
+
+### Features
+
+* add function `assertString` ([#51](https://github.com/mll-lab/js-utils/issues/51)) ([4b992af](https://github.com/mll-lab/js-utils/commit/4b992af5c0fb7617c7a641ae35845608a08734f7))
+
 # [2.40.0](https://github.com/mll-lab/js-utils/compare/v2.39.0...v2.40.0) (2025-08-19)
 
 
