@@ -381,10 +381,54 @@ describe('soleItem', () => {
     [[null, 2], null],
     [[null], null],
     [[undefined], undefined],
+    [[1, 2, 3], null],
+    [null, null],
+    [undefined, null],
+  ])('returns sole element or null', (input, expectedResult) => {
+    expect(soleItem(input)).toEqual(expectedResult);
+  });
+
+  it.each([
+    [[1, 2, 3], (x: number) => x === 2, 2],
+    [[1, 2, 3], (x: number) => x === 4, null],
+    [[1, 2, 2, 3], (x: number) => x === 2, null],
+  ])('filters by predicate', (input, predicate, expectedResult) => {
+    expect(soleItem(input, { predicate })).toEqual(expectedResult);
+  });
+
+  it.each([
+    [[], 'No items found'],
+    [null, 'No items found'],
+    [[1, 2], 'Multiple items found'],
+  ])('throws when throwIfNotExact is true', (input, errorMessage) => {
+    expect(() => soleItem(input, { throwIfNotExact: true })).toThrow(
+      errorMessage,
+    );
+  });
+
+  it.each([
+    [[1, 2, 3], (x: number) => x === 4, 'No items found'],
+    [[1, 2, 2, 3], (x: number) => x === 2, 'Multiple items found'],
   ])(
-    'returns first element of an array if the array has only one item',
-    (input, expectedResult) => {
-      expect(soleItem(input)).toEqual(expectedResult);
+    'throws with predicate when throwIfNotExact is true',
+    (
+      input: Array<number>,
+      predicate: (x: number) => boolean,
+      errorMessage: string,
+    ) => {
+      expect(() =>
+        soleItem(input, { predicate, throwIfNotExact: true }),
+      ).toThrow(errorMessage);
     },
   );
+
+  it('returns sole item when throwIfNotExact is true', () => {
+    expect(soleItem([42], { throwIfNotExact: true })).toBe(42);
+  });
+
+  it('returns sole matching item with predicate when throwIfNotExact is true', () => {
+    expect(
+      soleItem([1, 2, 3], { predicate: (x) => x === 2, throwIfNotExact: true }),
+    ).toBe(2);
+  });
 });
