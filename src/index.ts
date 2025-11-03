@@ -1,5 +1,6 @@
 // Sort alphabetically
 export * from './array';
+export * from './assert';
 export * from './date';
 export * from './device';
 export * from './error';
