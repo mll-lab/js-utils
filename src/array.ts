@@ -170,10 +170,29 @@ export function localeCompareStrings(a: string, b: string): number {
   return a.localeCompare(b);
 }
 
-/** If the given array contains exactly one item, return that, otherwise null. */
-export function soleItem<T>(array: Maybe<Array<T>>): T | null {
-  if (!array || array.length !== 1) {
+/** Returns the single item from the array if it contains exactly one (optionally matching a predicate), otherwise returns null. */
+export function soleItem<T>(
+  array: Maybe<Array<T>>,
+  options?: {
+    predicate?: (item: T) => boolean;
+    throwIfNotExact?: boolean;
+  },
+): T | null {
+  if (!array) {
+    if (options?.throwIfNotExact) throw new Error('No items found');
     return null;
   }
-  return array[0];
+
+  const matches = options?.predicate ? array.filter(options.predicate) : array;
+
+  if (matches.length === 1) {
+    return matches[0];
+  }
+
+  if (options?.throwIfNotExact) {
+    if (matches.length === 0) throw new Error('No items found');
+    throw new Error('Multiple items found');
+  }
+
+  return null;
 }
