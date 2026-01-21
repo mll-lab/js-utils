@@ -7,7 +7,8 @@
 export function errorMessage(error: unknown): string {
   const message = hasMessage(error) ? error.message : error;
 
-  if (message == null) {
+  // eslint-disable-next-line @mll-lab/prefer-loose-nullish-equality -- intentionally distinguish null and undefined
+  if (message === undefined) {
     return 'undefined';
   }
 
