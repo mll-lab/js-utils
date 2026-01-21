@@ -7,6 +7,7 @@
 export function errorMessage(error: unknown): string {
   const message = hasMessage(error) ? error.message : error;
 
+  // eslint-disable-next-line @mll-lab/prefer-loose-nullish-equality -- intentionally distinguish null and undefined
   if (message === undefined) {
     return 'undefined';
   }
@@ -15,5 +16,5 @@ export function errorMessage(error: unknown): string {
 }
 
 function hasMessage(error: unknown): error is { message: unknown } {
-  return typeof error === 'object' && error !== null && 'message' in error;
+  return error != null && typeof error === 'object' && 'message' in error;
 }
