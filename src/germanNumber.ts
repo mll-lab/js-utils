@@ -35,7 +35,7 @@ export function formatGermanNumber(
 export function parseGermanNumber(
   value: string | null | undefined,
 ): number | null {
-  if (value === null || value === undefined) {
+  if (value == null) {
     return null;
   }
 

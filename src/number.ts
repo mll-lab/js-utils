@@ -16,7 +16,7 @@ export function firstDecimalDigit(number: number): number {
   const regExp = /\d*\.(\d)/;
   const regExpMatchArray = number.toString().match(regExp);
 
-  if (regExpMatchArray === null) {
+  if (regExpMatchArray == null) {
     throw new Error(`Invalid number for regex matching: ${number}`);
   }
 
