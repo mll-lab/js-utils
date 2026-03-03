@@ -1,3 +1,10 @@
+## [2.41.1](https://github.com/mll-lab/js-utils/compare/v2.41.0...v2.41.1) (2026-03-03)
+
+
+### Bug Fixes
+
+* Update lodash to 4.17.23 ([a92a5e5](https://github.com/mll-lab/js-utils/commit/a92a5e5f59478905d01cf0b4de2c345f7f47727e))
+
 # [2.41.0](https://github.com/mll-lab/js-utils/compare/v2.40.0...v2.41.0) (2025-11-03)
 
 
